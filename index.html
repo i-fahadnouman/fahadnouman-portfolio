@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Fahad Nouman | Odoo ERP Developer &amp; Functional Consultant</title>
+<meta name="description" content="Muhammad Fahad Nouman, Odoo ERP developer and functional consultant in Lahore, Pakistan. 30+ client projects across Odoo 13 to 20: accounting, POS, manufacturing, HR and payroll, mobile sales, e-invoicing and AI.">
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f5f6fa; --text:#14161f; --muted:#5b6074;
+  --accent:#5b3df5; --accent2:#00b894; --card:#ffffff; --border:#e3e5ee;
+  --radius:16px; --max:1100px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0e1017;--bg2:#151824;--text:#eceef6;--muted:#9aa0b8;--card:#171b29;--border:#262b3d;--accent:#8b78ff}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+section.alt{background:var(--bg2)}
+h1,h2,h3{line-height:1.15}
+h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:640px;margin-bottom:40px}
+.eyebrow{color:var(--accent);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:700;font-size:1.1rem}
+.links{display:flex;gap:22px;align-items:center}
+.links a{color:var(--muted);font-size:.93rem}
+.links a:hover{color:var(--text)}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;border:1px solid var(--accent);transition:.15s}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.ghost:hover{background:var(--bg2)}
+.menu-btn{display:none;background:none;border:1px solid var(--border);color:var(--text);border-radius:8px;padding:6px 10px;font-size:1rem}
+@media(max-width:860px){
+  .menu-btn{display:block}
+  .links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--border)}
+  .links.open{display:flex}
+}
+
+/* hero */
+.hero{padding:96px 0 72px}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:18px}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:620px;font-size:1.1rem;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.badges{display:flex;gap:10px;flex-wrap:wrap}
+.badge{border:1px solid var(--border);background:var(--card);border-radius:999px;padding:6px 14px;font-size:.85rem;color:var(--muted)}
+
+.logo{font-size:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:999px;padding:7px 16px;font:inherit;font-size:.88rem;cursor:pointer}
+.chip.active,.chip:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.proj{display:flex;flex-direction:column;gap:2px}
+.pmeta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.vpill{font-size:.75rem;font-weight:600;color:var(--accent);background:var(--bg2);border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+.ind{font-size:.76rem;color:var(--muted)}
+.ptype{color:var(--accent2)!important;font-weight:600;font-size:.86rem!important;margin-bottom:6px}
+.proj[hidden]{display:none}
+/* hero (centered) + animation */
+.hero{position:relative;overflow:hidden;text-align:center}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.28;z-index:0;pointer-events:none}
+.hero::before{width:340px;height:340px;background:var(--accent);top:-80px;left:-80px;animation:drift 14s ease-in-out infinite alternate}
+.hero::after{width:300px;height:300px;background:var(--accent2);bottom:-90px;right:-60px;animation:drift 17s ease-in-out infinite alternate-reverse}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:flex;flex-direction:column;align-items:center;gap:30px}
+.hero-text{max-width:760px;margin:0 auto}
+.hero-text p{margin-left:auto;margin-right:auto}
+.hero .cta,.hero .badges{justify-content:center}
+.avatar-wrap{position:relative;width:250px;height:250px;display:grid;place-items:center;animation:float 5s ease-in-out infinite}
+.avatar-wrap::before{content:"";position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),var(--accent2),var(--accent));animation:spin 6s linear infinite}
+.avatar-wrap::after{content:"";position:absolute;inset:-6px;border-radius:50%;box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent);animation:pulse 2.8s ease-out infinite}
+.avatar{position:relative;z-index:1;width:238px;height:238px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:5px solid var(--bg);background:var(--bg2)}
+.hero-text>*{opacity:0;transform:translateY(18px);animation:rise .7s ease forwards}
+.hero-text>*:nth-child(1){animation-delay:.15s}.hero-text>*:nth-child(2){animation-delay:.3s}
+.hero-text>*:nth-child(3){animation-delay:.45s}.hero-text>*:nth-child(4){animation-delay:.6s}.hero-text>*:nth-child(5){animation-delay:.75s}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,opacity .6s ease}
+.card:hover,.stat:hover{transform:scale(1.07) translateY(-4px);z-index:5;box-shadow:0 18px 44px rgba(91,61,245,.28);border-color:var(--accent);background:color-mix(in srgb,var(--card) 92%,var(--accent))}
+.card:hover p,.card:hover .tag{color:var(--text)}
+.stat{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease,opacity .6s ease;position:relative}
+.hero h1 span{background-size:200% auto;animation:shine 5s linear infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent)}100%{box-shadow:0 0 0 26px transparent}}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.15)}}
+@keyframes shine{to{background-position:200% center}}
+@media(max-width:820px){.avatar-wrap{width:190px;height:190px}.avatar{width:178px;height:178px}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero-text>*,.reveal{opacity:1;transform:none}
+}
+/* more animation */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:50}
+.floaters span{position:absolute;left:var(--x);top:var(--y);z-index:0;font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid var(--border);background:color-mix(in srgb,var(--card) 80%,transparent);color:var(--muted);backdrop-filter:blur(4px);animation:bob 6s ease-in-out var(--d) infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+@media(max-width:1000px){.floaters{display:none}}
+.typer{font-size:1.25rem!important;color:var(--text)!important;margin-bottom:12px!important;min-height:1.9em}
+.typer #typed{color:var(--accent);font-weight:700}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:3px;vertical-align:-3px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-text>*:nth-child(6){animation-delay:.9s}
+.marquee{overflow:hidden;padding:18px 0;border-block:1px solid var(--border);background:var(--bg);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:14px;width:max-content;animation:scroll 55s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{white-space:nowrap;padding:7px 18px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--muted);font-size:.9rem;font-weight:600}
+.track span:nth-child(3n){color:var(--accent)}.track span:nth-child(3n+1){color:var(--accent2)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.card{position:relative;overflow:hidden;will-change:transform}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 18%,transparent),transparent 62%)}
+.card:hover::after{opacity:1}
+.btn.primary{position:relative;overflow:hidden}
+.btn.primary::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:sheen 3.6s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-80%}100%{left:140%}}
+.btn:active{transform:scale(.96)}
+.links a:not(.btn){position:relative;padding:4px 0}
+.links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.links a:not(.btn):hover::after,.links a.active::after{transform:scaleX(1)}
+.links a.active{color:var(--text)}
+.timeline{position:relative}
+.job::before{animation:dot 2.4s ease-out infinite}
+@keyframes dot{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 50%,transparent)}100%{box-shadow:0 0 0 12px transparent}}
+.chip{transition:background .2s,color .2s,transform .2s}
+.chip:hover{transform:translateY(-2px)}
+.proj:not([hidden]){animation:pop .45s ease both}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+#totop{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:none;background:var(--accent);color:#fff;font-size:1.2rem;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;transform:translateY(20px);pointer-events:none;transition:.3s;z-index:20}
+#totop.show{opacity:1;transform:none;pointer-events:auto}
+#totop:hover{transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){.track{animation:none}.card{will-change:auto}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.stat b{display:block;font-size:2.2rem;color:var(--accent)}
+.stat span{color:var(--muted);font-size:.92rem}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{font-size:.78rem;padding:4px 10px;border-radius:999px;background:var(--bg2);border:1px solid var(--border);color:var(--muted)}
+.icon{font-size:1.6rem;margin-bottom:10px}
+
+/* process */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.step{counter-increment:s;position:relative;padding:26px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card)}
+.step::before{content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;margin-bottom:12px}
+.step p{color:var(--muted);font-size:.95rem}
+
+/* timeline */
+.timeline{border-left:2px solid var(--border);padding-left:26px;display:grid;gap:30px}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:-33px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.job small{color:var(--muted)}
+.job h3{margin:2px 0 6px}
+.job p{color:var(--muted)}
+
+/* quotes */
+blockquote{font-size:1rem}
+blockquote footer{margin-top:14px;color:var(--muted);font-size:.88rem}
+
+/* contact */
+.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:760px){.contact-box{grid-template-columns:1fr}}
+form{display:grid;gap:12px}
+input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.info p{margin-bottom:10px;color:var(--muted)}
+.info a{color:var(--accent)}
+footer.site{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;text-align:center}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="logo">Muhammad Fahad Nouman</a>
+      <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+      <div class="links">
+        <a href="#expertise">Expertise</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="btn primary" href="#contact">Hire me</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="floaters" aria-hidden="true"><span style="--x:6%;--y:18%;--d:0s">Python</span><span style="--x:86%;--y:14%;--d:1s">Odoo</span><span style="--x:10%;--y:64%;--d:2s">XML</span><span style="--x:88%;--y:58%;--d:1.5s">OWL</span><span style="--x:20%;--y:86%;--d:2.5s">POS</span><span style="--x:76%;--y:84%;--d:0.5s">ZATCA</span><span style="--x:3%;--y:40%;--d:3s">PostgreSQL</span><span style="--x:92%;--y:36%;--d:2s">QWeb</span></div>
+    <div class="wrap hero-grid">
+      <div class="avatar-wrap"><img class="avatar" src="photo.jpg" alt="Muhammad Fahad Nouman" width="240" height="240"></div>
+      <div class="hero-text">
+        <p class="eyebrow">Hello, I'm Muhammad Fahad Nouman</p>
+        <h1>Odoo solutions, <span>thoughtfully built</span> around your business</h1>
+        <p class="typer">I'm an <span id="typed"></span><i class="caret"></i></p>
+        <p>I'm an Odoo ERP developer and functional consultant with three years of hands-on experience and more than thirty client projects, from Odoo 13 to the latest Odoo 20. I'd be glad to help you turn your processes into a system your team enjoys using, with careful requirement analysis, clean custom development, reliable reports and friendly support after go-live.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Let's work together</a>
+          <a class="btn ghost" href="#projects">Explore my projects</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Odoo 13 → 20</span>
+          <span class="badge">Python · JavaScript · OWL · XML</span>
+          <span class="badge">Functional + Technical</span>
+          <span class="badge">Lahore · On-site / Hybrid / Remote</span>
+        </div>
+      </div>
+          </div>
+  </section>
+
+  <section class="alt" style="padding:48px 0">
+    <div class="wrap stats">
+      <div class="stat"><b>3+</b><span>Years of dedicated Odoo work</span></div>
+      <div class="stat"><b>30+</b><span>Client projects delivered</span></div>
+      <div class="stat"><b>8</b><span>Odoo versions, 13 through 20</span></div>
+      <div class="stat"><b>20+</b><span>Functional areas covered</span></div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-label="Clients and projects I have worked on"><div class="track"><span>HHRD</span><span>Kafala</span><span>Mantech</span><span>SSOL</span><span>GroupNova</span><span>Thompson Electronics</span><span>Trace Trading</span><span>Visio Retail</span><span>AllNetworks</span><span>Bolt</span><span>Flamengo</span><span>Ibokinkay</span><span>KayClaudi</span><span>IRP</span><span>Malatan</span><span>SIFH</span><span>CLC</span><span>CKHL</span><span>ABIL</span><span>FESCO</span><span>Alazzaz</span><span>HMS</span><span>IBT</span><span>ZJC POS</span><span>CGA</span><span>Exonet AI</span><span>AMARANTH</span><span>Flowers by EA</span><span>RFS Group</span><span>Clydesdale Club</span><span>HHRD</span><span>Kafala</span><span>Mantech</span><span>SSOL</span><span>GroupNova</span><span>Thompson Electronics</span><span>Trace Trading</span><span>Visio Retail</span><span>AllNetworks</span><span>Bolt</span><span>Flamengo</span><span>Ibokinkay</span><span>KayClaudi</span><span>IRP</span><span>Malatan</span><span>SIFH</span><span>CLC</span><span>CKHL</span><span>ABIL</span><span>FESCO</span><span>Alazzaz</span><span>HMS</span><span>IBT</span><span>ZJC POS</span><span>CGA</span><span>Exonet AI</span><span>AMARANTH</span><span>Flowers by EA</span><span>RFS Group</span><span>Clydesdale Club</span></div></div>
+
+  <section id="expertise">
+    <div class="wrap">
+      <p class="eyebrow">Expertise</p>
+      <h2>How I can help</h2>
+      <p class="lead">A blend of technical depth and business understanding, so every solution is practical, maintainable and kind to your users.</p>
+      <div class="grid">
+        <div class="card"><div class="icon">🧩</div><h3>Custom module development</h3><p>Clean, upgrade-friendly modules in Python, XML and OWL: models, wizards, server actions, automated actions, security rules and cron jobs.</p><div class="tags"><span class=tag>Python</span><span class=tag>XML / QWeb</span><span class=tag>OWL / JS</span><span class=tag>Wizards</span><span class=tag>Cron</span></div></div>
+        <div class="card"><div class="icon">📊</div><h3>Reports, dashboards &amp; printing</h3><p>PDF and Excel reports, customer and partner statements, management dashboards, cheque and label printing, watermarks, and direct-to-printer output.</p><div class="tags"><span class=tag>QWeb PDF</span><span class=tag>XLSX</span><span class=tag>Dashboards</span><span class=tag>Cheque print</span><span class=tag>Labels</span></div></div>
+        <div class="card"><div class="icon">🔐</div><h3>Approvals, security &amp; controls</h3><p>Multi-level approval chains, credit-limit and discount rules, journal, warehouse and company restrictions, record rules and audit trails.</p><div class="tags"><span class=tag>Workflows</span><span class=tag>Access rights</span><span class=tag>Record rules</span><span class=tag>Audit log</span></div></div>
+        <div class="card"><div class="icon">🛒</div><h3>Point of Sale &amp; retail</h3><p>Retail and restaurant POS: custom receipts, discounts and returns with approval, multi-currency payments, KOT, Z-reports, loyalty, signatures and stock display.</p><div class="tags"><span class=tag>POS</span><span class=tag>Restaurant / KOT</span><span class=tag>Loyalty</span><span class=tag>Z-report</span></div></div>
+        <div class="card"><div class="icon">🔌</div><h3>Integrations &amp; compliance</h3><p>Experience with ZATCA and FBR e-invoicing, Shopify, Zid, WhatsApp, Stripe, ZKTeco biometric devices, payment gateways, EDI imports and ChatGPT / AI assistants.</p><div class="tags"><span class=tag>ZATCA</span><span class=tag>FBR</span><span class=tag>Shopify</span><span class=tag>WhatsApp</span><span class=tag>ZKTeco</span><span class=tag>AI</span></div></div>
+        <div class="card"><div class="icon">🚀</div><h3>Migration &amp; upgrades</h3><p>Moving customizations and data across Odoo versions, from 13 all the way to 20, with careful testing so go-live feels calm.</p><div class="tags"><span class=tag>Upgrades</span><span class=tag>Data import</span><span class=tag>UAT</span><span class=tag>Go-live</span></div></div>
+        <div class="card"><div class="icon">🗣️</div><h3>Functional consulting</h3><p>Requirement workshops, fit-gap analysis, process mapping, configuration, user training and documentation, so the system fits people as well as processes.</p><div class="tags"><span class=tag>Workshops</span><span class=tag>Fit-gap</span><span class=tag>Training</span><span class=tag>Documentation</span></div></div>
+        <div class="card"><div class="icon">⚡</div><h3>Support &amp; optimization</h3><p>Debugging, performance tuning, server and database care, backups and quick, friendly support for live systems.</p><div class="tags"><span class=tag>Debugging</span><span class=tag>Performance</span><span class=tag>Backups</span><span class=tag>Support</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="services">
+    <div class="wrap">
+      <p class="eyebrow">Areas</p>
+      <h2>Functional and technical know-how</h2>
+      <p class="lead">Over three years I've worked across most Odoo apps, understanding the business flow first and then building exactly what is needed.</p>
+      <div class="grid">
+        <div class="card"><h3>Sales</h3><p>Quotations, pricelists, discounts and margins, credit-limit and double approvals, multi-warehouse sourcing per line, commissions, blanket orders and invoicing policies.</p><div class="tags"><span class=tag>Pricelists</span><span class=tag>Approvals</span><span class=tag>Commissions</span></div></div>
+        <div class="card"><h3>Mobile Sales</h3><p>Field-sales app for salesmen: route management, order types, catalog, van stock, payments, loyalty, sales and stock reports, with approvals and back-office sync.</p><div class="tags"><span class=tag>Routes</span><span class=tag>Van sales</span><span class=tag>Loyalty</span></div></div>
+        <div class="card"><h3>CRM</h3><p>Pipelines, lead assignment, activity notifications, team changes, CRM-to-quotation flow and sales-team reporting.</p><div class="tags"><span class=tag>Leads</span><span class=tag>Activities</span><span class=tag>Teams</span></div></div>
+        <div class="card"><h3>Point of Sale</h3><p>Retail POS setups: access rights, receipts, discounts, returns, multi-currency payments, cheques, loyalty, order signatures and session reports.</p><div class="tags"><span class=tag>Retail</span><span class=tag>Receipts</span><span class=tag>Sessions</span></div></div>
+        <div class="card"><h3>Restaurant POS</h3><p>Kitchen order tickets, order types, service charges, table and refund flows, Z-reports and employee access control.</p><div class="tags"><span class=tag>KOT</span><span class=tag>Z-report</span><span class=tag>Service charge</span></div></div>
+        <div class="card"><h3>Accounting &amp; Finance</h3><p>Chart of accounts, multi-currency and manual exchange rates, landed cost, asset depreciation, budgets, analytic accounts, bank charges, cheque printing, batch payments and statements.</p><div class="tags"><span class=tag>Multi-currency</span><span class=tag>Landed cost</span><span class=tag>Assets</span><span class=tag>Budgets</span></div></div>
+        <div class="card"><h3>Taxes &amp; E-invoicing</h3><p>Local tax setups, VAT and Arabic invoice layouts, ZATCA (Saudi) and FBR (Pakistan) e-invoicing and POS integration.</p><div class="tags"><span class=tag>ZATCA</span><span class=tag>FBR</span><span class=tag>VAT</span></div></div>
+        <div class="card"><h3>Purchase</h3><p>Requests and requisitions, quotation comparison, multi-level approvals, vendor bills, three-way matching and purchase reports.</p><div class="tags"><span class=tag>Requisitions</span><span class=tag>Comparison</span><span class=tag>Approvals</span></div></div>
+        <div class="card"><h3>Inventory &amp; Warehouse</h3><p>Multi-warehouse and bin locations, valuation and average costing, replenishment, negative-stock control, backdated adjustments, lots and barcodes with multiple UoM.</p><div class="tags"><span class=tag>Valuation</span><span class=tag>Replenishment</span><span class=tag>Barcode</span></div></div>
+        <div class="card"><h3>Manufacturing</h3><p>BoMs and by-products, work centers and alternatives, work-order durations, consumption warnings, quality checks, scrap and production reports.</p><div class="tags"><span class=tag>BoM</span><span class=tag>Work orders</span><span class=tag>Quality</span></div></div>
+        <div class="card"><h3>HR &amp; Payroll</h3><p>Employee records and portals, attendance and biometric devices, overtime, leave, loans and salary advances, multi-currency payroll, payslip inputs and statutory reports.</p><div class="tags"><span class=tag>Payroll</span><span class=tag>Attendance</span><span class=tag>Loans</span></div></div>
+        <div class="card"><h3>Recruitment</h3><p>Applicant flows, refusal reasons, website job applications with CV handling and onboarding steps.</p><div class="tags"><span class=tag>Applicants</span><span class=tag>Website</span></div></div>
+        <div class="card"><h3>Projects &amp; Timesheets</h3><p>Milestones, project-to-bill and purchase-order wizards, analytic tracking, task notifications and proposal management.</p><div class="tags"><span class=tag>Milestones</span><span class=tag>Analytics</span></div></div>
+        <div class="card"><h3>Helpdesk &amp; Maintenance</h3><p>Tickets, equipment registers, service contracts, rentals, maintenance requests and asset tracking.</p><div class="tags"><span class=tag>Tickets</span><span class=tag>Assets</span><span class=tag>Rental</span></div></div>
+        <div class="card"><h3>Fleet &amp; Logistics</h3><p>Vehicles, fuel logs and prices, freight and shipping documents, manifests, berths and carriers, with EDI imports.</p><div class="tags"><span class=tag>Fleet</span><span class=tag>Freight</span><span class=tag>EDI</span></div></div>
+        <div class="card"><h3>Healthcare</h3><p>Hospital management: patients, appointments, hospitalization, dental, laboratory, radiology, insurance and billing.</p><div class="tags"><span class=tag>HMS</span><span class=tag>Insurance</span></div></div>
+        <div class="card"><h3>NGO &amp; Education</h3><p>Grant and proposal management, field visits, in-kind stock, education support programs and donor-style reporting.</p><div class="tags"><span class=tag>Proposals</span><span class=tag>Field visits</span></div></div>
+        <div class="card"><h3>Portals &amp; Website</h3><p>Customer and employee portals, statements, loan requests, document access and website integrations.</p><div class="tags"><span class=tag>Portal</span><span class=tag>Self-service</span></div></div>
+        <div class="card"><h3>Documents &amp; Sign</h3><p>Digital signatures, document workflows, attachments in bulk, certifications and approval stamps.</p><div class="tags"><span class=tag>Sign</span><span class=tag>Documents</span></div></div>
+        <div class="card"><h3>Reporting &amp; BI</h3><p>Management dashboards, aging reports, ledgers, analytic and Excel reports, scheduled report emails.</p><div class="tags"><span class=tag>Dashboards</span><span class=tag>Ledgers</span></div></div>
+        <div class="card"><h3>AI &amp; Automation</h3><p>ChatGPT and AI assistants inside Odoo, automated emails, scheduled actions and smart workflows.</p><div class="tags"><span class=tag>ChatGPT</span><span class=tag>Automation</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="projects">
+    <div class="wrap">
+      <p class="eyebrow">Projects</p>
+      <h2>Thirty client projects, eight Odoo versions</h2>
+      <p class="lead">A selection of the implementations I've had the pleasure of working on. Descriptions are kept general to respect each client's confidentiality.</p>
+      <div class="chips" role="tablist"><button class="chip active" data-f="all">All (30)</button><button class="chip" data-f="13">Odoo 13</button><button class="chip" data-f="14">Odoo 14</button><button class="chip" data-f="16">Odoo 16</button><button class="chip" data-f="17">Odoo 17</button><button class="chip" data-f="18">Odoo 18</button><button class="chip" data-f="19">Odoo 19</button><button class="chip" data-f="20">Odoo 20</button></div>
+      <div class="grid" id="projgrid">
+        <article class="card proj" data-v="13 17"><div class="pmeta"><span class="vpill">Odoo 13 · 17</span><span class="ind">NGO</span></div><h3>HHRD</h3><p class="ptype">HR, grants &amp; education</p><p>Long-running HR, payroll, admin forms and attendance system with proposal management, education support and career counseling programs, digital signatures and asset receiving. Carried forward from Odoo 13 to 17, with Haiti-currency payroll, field visits and in-kind stock.</p></article>
+        <article class="card proj" data-v="13"><div class="pmeta"><span class="vpill">Odoo 13</span><span class="ind">NGO</span></div><h3>Kafala</h3><p class="ptype">Purchasing &amp; finance</p><p>Purchase requests with quotation comparison and approval, budgets, assets, payroll and digital signatures.</p></article>
+        <article class="card proj" data-v="14 16"><div class="pmeta"><span class="vpill">Odoo 14 · 16</span><span class="ind">Trading</span></div><h3>Mantech</h3><p class="ptype">Sales &amp; inventory</p><p>Sale and inventory customizations, account segmentation and POS price and discount locking.</p></article>
+        <article class="card proj" data-v="16"><div class="pmeta"><span class="vpill">Odoo 16</span><span class="ind">Services</span></div><h3>SSOL</h3><p class="ptype">Legal, assets &amp; recruitment</p><p>Law-firm management for courts, trials and evidence, plus employee assets, property management, maintenance and a website job-application connector.</p></article>
+        <article class="card proj" data-v="16"><div class="pmeta"><span class="vpill">Odoo 16</span><span class="ind">Manufacturing</span></div><h3>GroupNova</h3><p class="ptype">Motors &amp; solar group</p><p>Sale, purchase and transfer approvals, fleet and fuel tracking, multi-currency payroll, petty cash, bank forms, certified documents and work-order duration reports.</p></article>
+        <article class="card proj" data-v="16"><div class="pmeta"><span class="vpill">Odoo 16</span><span class="ind">Retail</span></div><h3>Thompson Electronics</h3><p class="ptype">Retail POS</p><p>POS access rights, receipts, payment grouping, loyalty fixes, multi-currency POS payments, WhatsApp messaging and cheque management.</p></article>
+        <article class="card proj" data-v="16"><div class="pmeta"><span class="vpill">Odoo 16</span><span class="ind">Trading</span></div><h3>Trace Trading</h3><p class="ptype">Saudi e-invoicing</p><p>ZATCA e-invoicing for invoices and POS, VAT invoices, warranty registration, commissions, dashboards and a Zid store connector.</p></article>
+        <article class="card proj" data-v="16"><div class="pmeta"><span class="vpill">Odoo 16</span><span class="ind">Retail</span></div><h3>Visio Retail</h3><p class="ptype">POS, FBR &amp; Shopify</p><p>Pakistan FBR POS integration, Shopify connector, retail POS enhancements, stock requests and custom pricelists.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">IT services</span></div><h3>AllNetworks</h3><p class="ptype">Projects &amp; billing</p><p>Project extensions, automated email templates, customer ticket reports, Stripe fee handling, payment methods and monthly statements.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">Services</span></div><h3>Bolt</h3><p class="ptype">Payroll &amp; approvals</p><p>Invoice, payment, purchase and sale approvals, advance salary and loans, overtime and work-hour payroll inputs, biometric attendance and petty cash.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">Trading</span></div><h3>Flamengo</h3><p class="ptype">Purchasing &amp; sales analytics</p><p>Purchase and sales dashboards, cost reports, Excel exports, commissions, automatic landed cost, warehouse average costing and manual exchange rates.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">Retail</span></div><h3>Ibokinkay</h3><p class="ptype">POS &amp; retail</p><p>POS discounts and manager approval, return approval, multi-currency payments, cheque numbers, margin reports, branch-wise products, credit limits and attendance devices.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">Retail</span></div><h3>KayClaudi</h3><p class="ptype">POS &amp; retail</p><p>Retail POS with global discounts, custom validations, multi-currency pricelists, product labels, payroll journals and invoice balance fields.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">Trading</span></div><h3>IRP</h3><p class="ptype">Trading &amp; payroll</p><p>Multi-level purchase approvals, Excel import to sales and purchase, commission and batch-payment Excel reports, landed cost reports, payroll reports and project milestones.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">Trading</span></div><h3>Malatan</h3><p class="ptype">HR, loans &amp; approvals</p><p>Loan management, employee master reports, custody, PO and location approvals, Arabic tax invoices, bin locations and aged partner reports.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">Trading</span></div><h3>SIFH</h3><p class="ptype">Customer statements</p><p>Monthly customer confirmation statements by email, credit-limit approvals, multi-warehouse sales, asset depreciation changes, journal restrictions and POS cheque info.</p></article>
+        <article class="card proj" data-v="17"><div class="pmeta"><span class="vpill">Odoo 17</span><span class="ind">Logistics</span></div><h3>CLC</h3><p class="ptype">Accounting reports</p><p>Payment receipts, journal sequences, multi-invoice payments, payment and invoice reports, debit and credit totals and freight operations.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Shipping</span></div><h3>CKHL</h3><p class="ptype">Shipping &amp; logistics</p><p>Invoice and payment approvals, EDI manifest import for berths and carriers, bulk attachments and refunds, bank charges, expenses, portal, monthly statements and cheque printing.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Manufacturing</span></div><h3>ABIL</h3><p class="ptype">Manufacturing &amp; mobile sales</p><p>Mobile sales with routes, loyalty and reports, manufacturing work centers, quality and scrap, landed cost, Excel and PDF reports, auto-printing and journal restrictions.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Services</span></div><h3>FESCO</h3><p class="ptype">HR portal &amp; loans</p><p>Employee portal, advanced loans, transfers, contract updates, batch payment Excel reports, payment integration and an AI chatbot.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Trading</span></div><h3>Alazzaz</h3><p class="ptype">Sales &amp; purchase</p><p>Enhanced sales and purchase flows, CRM-to-quotation, purchase orders from sales, and custom reports.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Healthcare</span></div><h3>HMS</h3><p class="ptype">Hospital management</p><p>Hospital suite covering patients, dental, ambulance, blood bank, hospitalization, insurance, certifications, consent forms and commissions.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Services</span></div><h3>IBT</h3><p class="ptype">Accounting &amp; CRM</p><p>Accounting with analytic and asset management, financial reports and CRM enhancements.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Hospitality</span></div><h3>ZJC POS</h3><p class="ptype">Restaurant POS</p><p>Kitchen order tickets, Z-reports, refunds, access rights, barcode adds, service charges and order-type handling.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Trading</span></div><h3>CGA</h3><p class="ptype">Purchase &amp; inventory</p><p>Enhanced purchase flows, landed cost calculation, inventory aging and receipt reports, and management dashboards.</p></article>
+        <article class="card proj" data-v="18"><div class="pmeta"><span class="vpill">Odoo 18</span><span class="ind">Software</span></div><h3>Exonet AI</h3><p class="ptype">AI assistants</p><p>ChatGPT-powered assistants and AI actions integrated into the Odoo interface.</p></article>
+        <article class="card proj" data-v="19"><div class="pmeta"><span class="vpill">Odoo 19</span><span class="ind">Services</span></div><h3>AMARANTH</h3><p class="ptype">Services, rental &amp; HR</p><p>Employee portal with loans, equipment and rental tracking, helpdesk and portal upgrades, Excel reports, warehouse-lock approvals and service receipt tracking.</p></article>
+        <article class="card proj" data-v="19"><div class="pmeta"><span class="vpill">Odoo 19</span><span class="ind">Retail</span></div><h3>Flowers by EA</h3><p class="ptype">Retail &amp; POS</p><p>POS and inventory customizations, employee tweaks and an AI-powered accounting dashboard.</p></article>
+        <article class="card proj" data-v="19"><div class="pmeta"><span class="vpill">Odoo 19</span><span class="ind">Services</span></div><h3>RFS Group</h3><p class="ptype">Employee &amp; POS</p><p>Employee and point-of-sale customizations on Odoo 19.</p></article>
+        <article class="card proj" data-v="19 20"><div class="pmeta"><span class="vpill">Odoo 19 · 20</span><span class="ind">Hospitality</span></div><h3>Clydesdale Club</h3><p class="ptype">POS order signature</p><p>POS order signature feature, also prepared for Odoo 20.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <p class="eyebrow">Experience</p>
+      <h2>Where I've worked</h2>
+      <div class="timeline" style="margin-top:30px">
+        <div class="job"><small>Jun 2025 – Present</small><h3>Odoo Technical Developer · Exonet Consulting Group</h3><p>Full-time. Custom Odoo development, migrations and functional consulting for multiple clients on recent Odoo versions.</p></div>
+        <div class="job"><small>Jun 2024 – Aug 2025</small><h3>Odoo Technical Developer · Technology Birds Canada</h3><p>Full-time, on-site. Odoo customization, reports and POS work for a range of client projects.</p></div>
+        <div class="job"><small>Dec 2023 – Jun 2024</small><h3>Odoo Technical Developer · SelectaSol</h3><p>Full-time. Where my Odoo journey began: modules for law, assets, maintenance and recruitment.</p></div>
+      </div>
+      <p class="lead" style="margin-top:30px">Education: National College of Business Administration &amp; Economics.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's talk about your project</h2>
+      <p class="lead">Have an Odoo project in mind, or need a hand with an existing system? I'd love to hear about it. I'm open to on-site, hybrid and remote work, and I usually reply within a day.</p>
+      <div class="contact-box">
+        <form action="mailto:i.fahadnouman@gmail.com" method="post" enctype="text/plain">
+          <input name="name" placeholder="Your name" required>
+          <input name="email" type="email" placeholder="Email" required>
+          <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+          <button class="btn primary" type="submit">Send message</button>
+        </form>
+        <div class="info">
+          <p>📧 <a href="mailto:i.fahadnouman@gmail.com">i.fahadnouman@gmail.com</a></p>
+          <p>💼 <a href="https://www.linkedin.com/in/muhammad-fahad-nouman-b13093307" target="_blank" rel="noopener">linkedin.com/in/muhammad-fahad-nouman</a></p>
+          <p>📍 Lahore, Punjab, Pakistan</p>
+          <p>🟢 Open to work · On-site · Hybrid · Remote</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap">© <span id="y"></span> Muhammad Fahad Nouman. All rights reserved.</div></footer>
+<button id="totop" aria-label="Back to top">↑</button>
+
+<script>
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');
+  const f=c.dataset.f;
+  document.querySelectorAll('.proj').forEach(p=>{p.hidden=!(f==='all'||p.dataset.v.split(' ').includes(f))});
+}));
+(function(){
+  const els=document.querySelectorAll('.card,.stat,.step,.job,h2');
+  if(!('IntersectionObserver' in window)){return}
+  els.forEach((e,i)=>{e.classList.add('reveal');e.style.transitionDelay=((i%4)*70)+'ms'});
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');const t=en.target;setTimeout(()=>{t.style.transitionDelay=''},1000);io.unobserve(t)}}),{threshold:.12});
+  els.forEach(e=>io.observe(e));
+})();
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // scroll progress + back to top + nav highlight
+  const bar=document.getElementById('progress'),top=document.getElementById('totop');
+  const onScroll=()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);bar.style.width=(p*100)+'%';top.classList.toggle('show',h.scrollTop>600)};
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  top.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
+  const links=[...document.querySelectorAll('.links a[href^="#"]:not(.btn)')];
+  if('IntersectionObserver' in window){
+    const so=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+en.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+    links.forEach(l=>{const t=document.querySelector(l.getAttribute('href'));if(t)so.observe(t)});
+  }
+  // typing roles
+  const el=document.getElementById('typed');
+  const roles=['Odoo ERP Developer','Functional Consultant','POS & Retail Specialist','Accounting & Reports Expert','Migration & Upgrade Specialist'];
+  if(el){
+    if(reduce){el.textContent=roles[0]}
+    else{let r=0,i=0,del=false;(function tick(){const w=roles[r];el.textContent=w.slice(0,i);
+      if(!del&&i===w.length){del=true;return setTimeout(tick,1500)}
+      if(del&&i===0){del=false;r=(r+1)%roles.length}
+      i+=del?-1:1;setTimeout(tick,del?35:70)})()}
+  }
+  // counters
+  document.querySelectorAll('.stat b').forEach(b=>{
+    const m=b.textContent.match(/^(\d+)(.*)$/);if(!m||reduce)return;
+    const end=+m[1],suf=m[2];b.textContent='0'+suf;
+    if(!('IntersectionObserver' in window)){b.textContent=end+suf;return}
+    const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;io.disconnect();
+      const t0=performance.now();(function step(t){const k=Math.min((t-t0)/1400,1);b.textContent=Math.round(end*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(step)})(t0)},{threshold:.6});
+    io.observe(b);
+  });
+  // tilt + glow on cards (mouse devices only)
+  if(!reduce&&matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.card').forEach(c=>{
+      c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');
+        c.style.transform='perspective(700px) rotateX('+((.5-y)*3)+'deg) rotateY('+((x-.5)*4)+'deg) scale(1.07) translateY(-4px)'});
+      c.addEventListener('mouseleave',()=>{c.style.transform=''});
+    });
+  }
+})();
+document.getElementById('y').textContent = new Date().getFullYear();
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.links').classList.remove('open')));
+</script>
+</body>
+</html>
