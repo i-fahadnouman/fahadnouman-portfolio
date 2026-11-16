@@ -3,8 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Muhammad Fahad Nouman | Odoo ERP Developer &amp; Functional Consultant</title>
-<meta name="description" content="Muhammad Fahad Nouman, Odoo ERP developer and functional consultant in Lahore, Pakistan. 30+ client projects across Odoo 13 to 20: accounting, POS, manufacturing, HR and payroll, mobile sales, e-invoicing and AI.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#714B67">
+<title>Muhammad Fahad Nouman | Odoo ERP Architect &amp; Functional Consultant</title>
+<meta name="description" content="Muhammad Fahad Nouman, Odoo ERP architect and functional consultant in Lahore, Pakistan. 30+ client projects across Odoo 13 to 20: accounting, POS, manufacturing, HR and payroll, mobile sales, e-invoicing and AI.">
 <script>
 try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}
 
@@ -265,15 +269,265 @@ input:hover,textarea:hover{border-color:var(--accent)}
 input:focus,textarea:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent);transform:translateY(-2px)}
 #totop.show:hover{animation:nudge .7s ease infinite}
 @keyframes nudge{50%{transform:translateY(-7px)}}
+
+/* ===== logo subtitle, icons ===== */
+.logo{display:inline-flex;flex-direction:column;line-height:1.1;transform-origin:left center}
+.logo-name{font-weight:700;font-size:1rem}
+.logo-sub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:4px}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+@media(max-width:420px){.logo-name{font-size:.9rem}.logo-sub{letter-spacing:.14em}}
+
+/* ===== contact section ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:start}
+@media(max-width:920px){.contact-grid{grid-template-columns:1fr;gap:32px}}
+.reach{font-size:.85rem;font-weight:600;color:var(--muted);margin:28px 0 12px}
+.crow{display:flex;align-items:center;gap:14px;padding:11px 14px;border:1px solid var(--border);background:var(--card);border-radius:14px;margin-bottom:12px;transition:transform .25s cubic-bezier(.3,1.4,.5,1),border-color .2s,box-shadow .25s,opacity .6s}
+.crow:hover{transform:translateX(6px);border-color:var(--accent);box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 16%,transparent)}
+.cico{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;flex:none}
+.cico.mail{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.cico.wa{background:color-mix(in srgb,#25D366 18%,transparent);color:#1a9e4d}
+.cico.in{background:color-mix(in srgb,#0a66c2 16%,transparent);color:#0a66c2}
+.ctext{flex:1;font-weight:600;min-width:0;overflow-wrap:anywhere}
+.ctext small{font-weight:500;color:var(--muted)}
+.ctext:hover{color:var(--accent)}
+.copybtn{border:1px solid var(--border);background:var(--bg2);color:var(--accent);border-radius:8px;padding:6px 12px;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.copybtn:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
+.where{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.92rem;margin-top:6px}
+.qcard{border:1px solid var(--border);background:var(--card);border-radius:24px;padding:28px;transition:opacity .6s,transform .6s}
+.qcard h3{font-size:1rem;margin:20px 0 10px}
+.qcard h3:first-child{margin-top:0}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;width:1px;height:1px;padding:0;border:0;pointer-events:none}
+.opt span{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--border);border-radius:999px;background:var(--bg);cursor:pointer;font-size:.9rem;font-weight:500;transition:transform .2s cubic-bezier(.3,1.6,.5,1),border-color .2s,background .2s}
+.opt span::before{content:"";width:9px;height:9px;border-radius:50%;border:1.5px solid var(--muted);transition:background .2s,border-color .2s,box-shadow .2s}
+.opt span:hover{border-color:var(--accent);transform:translateY(-2px)}
+.opt input:checked+span{background:color-mix(in srgb,var(--accent) 14%,var(--card));border-color:var(--accent)}
+.opt input:checked+span::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+.opt input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 14px}
+@media(max-width:520px){.qrow{grid-template-columns:1fr}}
+.msgbox{border:1px dashed var(--border);border-radius:14px;padding:12px 14px;background:var(--bg);transition:border-color .2s}
+.msgbox:focus-within{border-color:var(--accent)}
+.msgbox label{font-size:.72rem;letter-spacing:.1em;font-weight:700;color:var(--muted);text-transform:uppercase}
+.msgbox textarea{border:none;background:transparent;padding:8px 0 0;min-height:130px;box-shadow:none!important;transform:none!important;outline:none}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+.actions .btn{padding:10px 16px;font-size:.9rem}
+button.btn{font:inherit;font-weight:600;cursor:pointer;line-height:1.6}
+button.btn.ghost{background:transparent;color:var(--text)}
+button.btn.ghost:hover{color:#fff}
+.linkbtn{background:none;border:none;color:var(--accent);font:inherit;font-weight:600;cursor:pointer;padding:10px 6px}
+.linkbtn:hover{text-decoration:underline}
+
+/* ===== footer ===== */
+.site-footer{margin-top:0;padding-top:64px;border-top:1px solid var(--border);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--bg)),var(--bg) 70%)}
+.f-grid{display:grid;grid-template-columns:1.5fr .8fr 1fr 1.2fr;gap:40px}
+@media(max-width:1000px){.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.f-grid{grid-template-columns:1fr}}
+.f-logo{margin-bottom:14px}
+.f-logo .logo-name{font-size:1.5rem}
+.f-tag{color:var(--accent);font-weight:600;margin-bottom:10px}
+.f-desc{color:var(--muted);font-size:.95rem;margin-bottom:16px;max-width:380px}
+.f-line{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:.95rem}
+.f-line .ic{color:var(--accent2)}
+.f-line a:hover{color:var(--accent)}
+.f-line span{color:var(--muted)}
+.f-social{display:flex;gap:10px;margin-top:18px}
+.f-social a{width:42px;height:42px;border:1px solid var(--border);border-radius:12px;display:grid;place-items:center;background:var(--card);transition:transform .25s cubic-bezier(.3,1.6,.5,1),background .2s,color .2s,border-color .2s}
+.f-social a:hover{transform:translateY(-4px) rotate(-6deg);background:var(--accent);color:#fff;border-color:var(--accent)}
+.f-col h4{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.f-col h4::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent2)}
+.f-col>a:not(.f-link){display:block;color:var(--muted);padding:5px 0;transition:color .2s,transform .2s}
+.f-col>a:not(.f-link):hover{color:var(--accent);transform:translateX(5px)}
+.f-link{display:block;border:1px solid var(--border);background:color-mix(in srgb,var(--card) 80%,transparent);border-radius:14px;padding:13px 16px;margin-bottom:12px;transition:transform .25s cubic-bezier(.3,1.4,.5,1),border-color .2s,box-shadow .25s}
+.f-link:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 16%,transparent)}
+.f-link b{display:block;font-size:.95rem}
+.f-link span{font-size:.82rem;color:var(--muted)}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:48px;padding:22px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
+.f-top{display:inline-flex;align-items:center;gap:6px;transition:color .2s,transform .2s}
+.f-top:hover{color:var(--accent);transform:translateY(-2px)}
+
+/* ===== contact card: same height as the left column, more compact ===== */
+.contact-grid{grid-template-columns:1fr 1.2fr;align-items:stretch}
+.qcard{display:flex;flex-direction:column;padding:20px 22px}
+.qcard h3{font-size:.95rem;margin:14px 0 8px}
+.qcard h3:first-child{margin-top:0}
+.opts{gap:8px}
+.opt span{padding:6px 12px;font-size:.84rem;gap:7px}
+.opt span::before{width:8px;height:8px}
+.qrow{margin:14px 0 10px;gap:10px}
+.qcard input{padding:9px 13px;font-size:.9rem}
+.msgbox{flex:1;display:flex;flex-direction:column;padding:10px 13px}
+.msgbox textarea{flex:1;min-height:64px;font-size:.92rem;padding-top:6px}
+.actions{margin-top:14px}
+.qcard .form-note{margin-top:6px;min-height:0}
+@media(max-width:920px){.contact-grid{grid-template-columns:1fr}}
+
+/* no sideways scrolling on phones (cards start slightly offset before they slide in) */
+html,body{overflow-x:clip}
+/* ===== hero, split layout: text left, photo + floating cards right ===== */
+.hero{text-align:left;padding:84px 0 88px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+.hero-text{max-width:none;margin:0}
+.hero-text p{margin-left:0;margin-right:0}
+.hero h1{font-size:clamp(2.3rem,4.8vw,3.9rem);line-height:1.05;letter-spacing:-.025em}
+.hero .hero-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--border);border-radius:999px;background:var(--card);font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:22px;max-width:none}
+.hero-pill i{width:8px;height:8px;border-radius:50%;background:#2ecc71;animation:ping 2s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(46,204,113,.55)}100%{box-shadow:0 0 0 10px rgba(46,204,113,0)}}
+.hero .cta{justify-content:flex-start;margin-bottom:28px}
+.hero .btn{display:inline-flex;align-items:center;gap:9px}
+.hero .btn .ic{width:18px;height:18px}
+.btn .arr{transition:transform .25s}
+.btn:hover .arr{transform:translateX(5px)}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;max-width:470px}
+.check{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem;transition:transform .25s}
+.check:hover{transform:translateX(5px)}
+.tick{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:none;background:color-mix(in srgb,var(--accent2) 18%,transparent);color:var(--accent2)}
+.tick .ic{width:12px;height:12px;stroke-width:3}
+
+.hero-visual{position:relative;min-height:500px;width:100%;max-width:520px;margin:0 auto;display:grid;place-items:center}
+.blob{position:absolute;width:300px;height:300px;right:4%;top:2%;background:linear-gradient(135deg,var(--accent),var(--accent2));opacity:.5;border-radius:50%;filter:blur(1px);animation:morph 12s ease-in-out infinite alternate;translate:calc(var(--px,0)*-20px) calc(var(--py,0)*-16px)}
+@keyframes morph{0%{border-radius:50% 50% 50% 50%;transform:rotate(0)}50%{border-radius:42% 58% 55% 45%/48% 44% 56% 52%;transform:rotate(60deg) scale(1.05)}100%{border-radius:58% 42% 46% 54%/54% 58% 42% 46%;transform:rotate(130deg)}}
+.photo-wrap{position:relative;z-index:1;margin-left:auto;margin-right:7%;animation:float 6s ease-in-out infinite;translate:calc(var(--px,0)*14px) calc(var(--py,0)*14px);transition:translate .25s ease-out}
+.photo-card{width:min(300px,64vw);aspect-ratio:1/1.1;border-radius:28px;overflow:hidden;transform:rotate(-4deg);border:1px solid color-mix(in srgb,var(--text) 14%,transparent);box-shadow:0 34px 70px rgba(0,0,0,.38);background:var(--bg2);transition:transform .55s cubic-bezier(.3,1.5,.5,1),box-shadow .3s}
+.photo-card:hover{transform:rotate(0) scale(1.04);box-shadow:0 40px 80px rgba(0,0,0,.45)}
+.photo{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+
+.fcard{position:absolute;z-index:2;padding:12px 14px;border-radius:16px;border:1px solid var(--border);background:color-mix(in srgb,var(--card) 90%,transparent);backdrop-filter:blur(10px);box-shadow:0 18px 40px rgba(0,0,0,.28);font-size:.8rem;color:var(--text);animation:bob 6s ease-in-out var(--d,0s) infinite;translate:calc(var(--px,0)*var(--mx,-20)*1px) calc(var(--py,0)*var(--mx,-20)*.8px);transition:translate .3s ease-out,box-shadow .25s}
+.fcard:hover{box-shadow:0 22px 50px color-mix(in srgb,var(--accent) 30%,transparent)}
+.fc-h{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.fc-h b{font-size:.86rem}
+.fc-h code{margin-left:auto;font-size:.7rem;color:var(--muted)}
+.fic{width:20px;height:20px;border-radius:6px;background:var(--c)}
+.fcard small{color:var(--muted);font-size:.74rem;display:block}
+.fc-a{top:3%;left:-3%;width:240px}
+.bar{height:5px;border-radius:5px;background:var(--accent2);position:relative;margin:8px 0 10px;overflow:hidden}
+.bar i{position:absolute;right:0;top:0;bottom:0;width:24%;background:#ef6f76;animation:barp 3s ease-in-out infinite}
+@keyframes barp{50%{width:34%}}
+.alert{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:9px;background:color-mix(in srgb,#ef6f76 16%,transparent);color:#ef6f76;font-weight:600;font-size:.74rem}
+.alert .ic{width:14px;height:14px}
+.fc-b{right:-4%;bottom:21%;width:220px}
+.vers{display:flex;align-items:center;gap:6px;margin:10px 0 8px}
+.vers em{font-style:normal;font-weight:700;font-size:.78rem;padding:4px 8px;border-radius:7px;background:color-mix(in srgb,var(--accent2) 16%,transparent);color:var(--accent2)}
+.vers em.on{background:var(--accent2);color:#fff;animation:glow 2.4s ease-in-out infinite}
+.vers s{display:block;width:9px;height:2px;background:var(--border)}
+@keyframes glow{50%{box-shadow:0 0 0 5px color-mix(in srgb,var(--accent2) 30%,transparent)}}
+.fc-c{left:-1%;bottom:1%;width:232px}
+.inv{display:flex;gap:12px;align-items:center;margin:4px 0 8px}
+.qr{width:46px;height:46px;flex:none;background:#fff;padding:4px;border-radius:6px;fill:#15161c}
+.lines{flex:1;display:grid;gap:6px}
+.lines i{display:block;height:5px;border-radius:5px;background:var(--border)}
+.lines i:nth-child(2){width:70%}.lines i:nth-child(3){width:45%}
+.vat{font-size:.7rem;color:var(--muted);display:block;margin-bottom:8px}
+.ok{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:9px;background:color-mix(in srgb,#2ecc71 16%,transparent);color:#26a65b;font-weight:600;font-size:.74rem}
+.ok .ic{width:14px;height:14px;stroke-width:3}
+.fc-d{left:49%;bottom:0;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-weight:600;white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:#2ecc71;animation:ping 2s ease-out infinite}
+.sphere{position:absolute;z-index:2;left:1%;top:46%;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#6ee7da,var(--accent2));box-shadow:0 14px 30px color-mix(in srgb,var(--accent2) 45%,transparent);animation:bob 5s ease-in-out var(--d,0s) infinite;translate:calc(var(--px,0)*var(--mx,30)*1px) calc(var(--py,0)*var(--mx,30)*.8px)}
+@media(max-width:900px){
+  .hero{padding:56px 0 64px}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-visual{min-height:470px;max-width:480px}
+}
+@media(max-width:520px){
+  .checks{grid-template-columns:1fr}
+  .fc-c,.fc-d,.sphere{display:none}
+  .hero-visual{min-height:440px}
+  .photo-wrap{margin:0 2% 0 auto}
+  .photo-card{width:200px}
+  .fc-a{left:0;top:0;width:172px;padding:10px 12px}
+  .fc-a .alert{font-size:.66rem;padding:6px 8px}
+  .fc-b{right:0;bottom:4%;width:170px;padding:10px 12px}
+  .vers em{padding:3px 6px;font-size:.72rem}
+  .fc-h b{white-space:nowrap}
+  .fc-a code{display:none}
+}
+@media(prefers-reduced-motion:reduce){.photo-wrap,.fcard,.sphere,.blob{animation:none!important}}
+
+/* ===== toolkit section ===== */
+.tk-head{text-align:center}
+.tk-head .lead{margin:0 auto 36px}
+.tk-head h2::after{margin-left:auto;margin-right:auto}
+.tk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+@media(max-width:900px){.tk-grid{grid-template-columns:1fr}}
+.tk{border:1px solid var(--border);background:var(--card);border-radius:18px;padding:18px 18px 20px;transition:transform .3s cubic-bezier(.3,1.4,.5,1),border-color .2s,box-shadow .25s,opacity .6s}
+.tk:hover{border-color:color-mix(in srgb,var(--ck) 55%,var(--border));box-shadow:0 14px 34px color-mix(in srgb,var(--ck) 16%,transparent)}
+.tk h3{display:flex;align-items:center;gap:10px;font-size:.95rem;margin-bottom:14px}
+.tk h3 i{width:10px;height:10px;border-radius:3px;background:var(--ck)}
+.tchips{display:flex;flex-wrap:wrap;gap:8px}
+.tchip{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:var(--bg);color:var(--text);font:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:transform .2s cubic-bezier(.3,1.6,.5,1),border-color .2s,background .2s}
+.tchip .ic{width:14px;height:14px;color:var(--ck);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.tchip:hover,.tchip:focus-visible{transform:translateY(-3px);border-color:var(--ck);background:color-mix(in srgb,var(--ck) 10%,var(--bg));outline:none}
+.tchip:hover .ic,.tchip:focus-visible .ic{transform:scale(1.25) rotate(-8deg)}
+.tk.in .tchip{animation:chipin .5s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(var(--i)*35ms + 150ms)}
+@keyframes chipin{from{opacity:0;transform:translateY(8px) scale(.9)}to{opacity:1;transform:none}}
+.tk-tip{position:fixed;left:0;top:0;z-index:70;max-width:260px;padding:8px 12px;border-radius:10px;background:var(--text);color:var(--bg);font-size:.78rem;font-weight:500;line-height:1.4;pointer-events:none;opacity:0;transition:opacity .15s;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.tk-tip.on{opacity:1}
+
+/* toolkit: equal-height cards, tidy rows */
+.tk-grid{align-items:stretch}
+.tk{display:flex;flex-direction:column}
+.tchips{align-content:flex-start}
+.tchip{white-space:nowrap;padding:6px 10px;font-size:.8rem;gap:6px}
+.tchips{gap:8px 7px}
 </style>
 </head>
 <body>
 <div id="progress" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="t-funnel" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.5 10 19 14 21 14 12.5 22 3"/></symbol>
+  <symbol id="t-trend" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+  <symbol id="t-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="t-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></symbol>
+  <symbol id="t-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></symbol>
+  <symbol id="t-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
+  <symbol id="t-card" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></symbol>
+  <symbol id="t-percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="t-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="t-clip" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></symbol>
+  <symbol id="t-buoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.9 4.9 4.3 4.3M14.8 14.8l4.3 4.3M14.8 9.2l4.3-4.3M4.9 19.1l4.3-4.3"/></symbol>
+  <symbol id="t-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="t-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></symbol>
+  <symbol id="t-userplus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></symbol>
+  <symbol id="t-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="t-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+  <symbol id="t-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="t-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+  <symbol id="t-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></symbol>
+  <symbol id="t-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></symbol>
+  <symbol id="t-branch" viewBox="0 0 24 24"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+  <symbol id="t-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
+  <symbol id="t-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="t-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v.01M14 20v.01M20 20h1"/></symbol>
+  <symbol id="t-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="t-chip" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+  <symbol id="t-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
+  <symbol id="t-sync" viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></symbol>
+  <symbol id="t-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="t-import" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="t-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+  <symbol id="t-archive" viewBox="0 0 24 24"><path d="M3 3h18v5H3zM5 8v13h14V8M10 12h4"/></symbol>
+  <symbol id="t-barcode" viewBox="0 0 24 24"><path d="M3 5v14M7 5v14M11 5v14M15 5v14M19 5v14M21 5v14"/></symbol>
+  <symbol id="t-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="t-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="t-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/></symbol>
+</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.6A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.2c0 3.1 2.6 5.7 5.7 5.7l1.2-1.4-2-1-.9.7a4 4 0 0 1-1.8-1.8l.7-.9-1-2L9 9.2z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+</svg>
 
 <header>
   <div class="wrap">
     <nav>
-      <a href="#top" class="logo">Muhammad Fahad Nouman</a>
+      <a href="#top" class="logo"><span class="logo-name">Muhammad Fahad Nouman</span><span class="logo-sub">Odoo ERP Architect</span></a>
       <div class="nav-right">
         <div class="links">
         <a href="#expertise">Expertise</a>
@@ -295,26 +549,52 @@ input:focus,textarea:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 
 
 <main id="top">
   <section class="hero">
-    <div class="floaters" aria-hidden="true"><span style="--x:6%;--y:18%;--d:0s">Python</span><span style="--x:86%;--y:14%;--d:1s">Odoo</span><span style="--x:10%;--y:64%;--d:2s">XML</span><span style="--x:88%;--y:58%;--d:1.5s">OWL</span><span style="--x:20%;--y:86%;--d:2.5s">POS</span><span style="--x:76%;--y:84%;--d:0.5s">ZATCA</span><span style="--x:3%;--y:40%;--d:3s">PostgreSQL</span><span style="--x:92%;--y:36%;--d:2s">QWeb</span></div>
     <div class="wrap hero-grid">
-      <div class="avatar-wrap"><img class="avatar" src="photo.jpg" alt="Muhammad Fahad Nouman" width="240" height="240"></div>
       <div class="hero-text">
-        <p class="eyebrow">Hello, I'm Muhammad Fahad Nouman</p>
+        <p class="hero-pill"><i></i>Odoo ERP Architect · Lahore · working worldwide</p>
         <h1>Odoo solutions, <span>thoughtfully built</span> around your business</h1>
-        <p class="typer">I'm an <span id="typed"></span><i class="caret"></i></p>
-        <p>I'm an Odoo ERP developer and functional consultant with three years of hands-on experience and more than thirty client projects, from Odoo 13 to the latest Odoo 20. I'd be glad to help you turn your processes into a system your team enjoys using, with careful requirement analysis, clean custom development, reliable reports and friendly support after go-live.</p>
+        <p class="typer">I'm <span id="typed"></span><i class="caret"></i></p>
+        <p>I'm Muhammad Fahad Nouman, an Odoo ERP developer and functional consultant with three years of hands-on experience and more than thirty client projects, from Odoo 13 to the latest Odoo 20. I'd be glad to help you turn your processes into a system your team enjoys using, with careful requirement analysis, clean custom development, reliable reports and friendly support after go-live.</p>
         <div class="cta">
-          <a class="btn primary" href="#contact">Let's work together</a>
-          <a class="btn ghost" href="#projects">Explore my projects</a>
+          <a class="btn primary" href="https://wa.me/923024270257" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg> Message me on WhatsApp</a>
+          <a class="btn ghost" href="#projects">See projects and results <svg class="ic arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <div class="badges">
-          <span class="badge">Odoo 13 → 20</span>
-          <span class="badge">Python · JavaScript · OWL · XML</span>
-          <span class="badge">Functional + Technical</span>
-          <span class="badge">Lahore · On-site / Hybrid / Remote</span>
+        <div class="checks">
+          <span class="check"><i class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></i>Odoo 13 to 20</span>
+          <span class="check"><i class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></i>3+ years on Odoo</span>
+          <span class="check"><i class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></i>30+ client projects</span>
+          <span class="check"><i class="tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></i>Functional + technical</span>
         </div>
       </div>
-          </div>
+
+      <div class="hero-visual">
+        <div class="blob" aria-hidden="true"></div>
+        <div class="photo-wrap"><div class="photo-card"><img class="photo" src="photo.jpg" alt="Muhammad Fahad Nouman" width="420" height="440"></div></div>
+
+        <div class="fcard fc-a" style="--mx:-26;--d:0s" aria-hidden="true">
+          <div class="fc-h"><span class="fic" style="--c:#8f6aa6"></span><b>Sale Order</b><code>SO-0421</code></div>
+          <small>Discount limit</small>
+          <div class="bar"><i></i></div>
+          <div class="alert"><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg> Above limit · sent for approval</div>
+        </div>
+
+        <div class="fcard fc-b" style="--mx:30;--d:1.2s" aria-hidden="true">
+          <div class="fc-h"><span class="fic" style="--c:#ef6f76"></span><b>Upgrade complete</b></div>
+          <div class="vers"><em>17</em><s></s><em>18</em><s></s><em>19</em><s></s><em class="on">20</em></div>
+          <small>Data and customizations carried over</small>
+        </div>
+
+        <div class="fcard fc-c" style="--mx:-18;--d:2s" aria-hidden="true">
+          <div class="fc-h"><span class="fic" style="--c:#3aa675"></span><b>Tax invoice</b></div>
+          <div class="inv"><svg class="qr" viewBox="0 0 9 9" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="7" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="8" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="8" y="4" width="1" height="1"/><rect x="1" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="0" y="7" width="1" height="1"/><rect x="1" y="7" width="1" height="1"/><rect x="2" y="7" width="1" height="1"/><rect x="5" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="7" y="8" width="1" height="1"/></svg><div class="lines"><i></i><i></i><i></i></div></div>
+          <code class="vat">VAT 15%</code>
+          <div class="ok"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Ready for e-invoicing</div>
+        </div>
+
+        <div class="fcard fc-d" style="--mx:22;--d:.6s" aria-hidden="true"><i class="dot"></i>Available for new projects</div>
+        <div class="sphere" style="--mx:36;--d:1.6s" aria-hidden="true"></div>
+      </div>
+    </div>
   </section>
 
   <section class="alt" style="padding:48px 0">
@@ -376,6 +656,21 @@ input:focus,textarea:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 
     </div>
   </section>
 
+  <section id="toolkit">
+    <div class="wrap">
+      <div class="tk-head">
+        <p class="eyebrow">Toolkit</p>
+        <h2>What I work with</h2>
+        <p class="lead">Hover or tap any item to see where I used it.</p>
+      </div>
+      <div class="tk-grid">
+        <div class="tk" style="--ck:var(--accent)"><h3><i></i>Odoo apps</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Alazzaz (CRM to quotation), IBT (CRM enhancements)"><svg class="ic" aria-hidden="true"><use href="#t-funnel"/></svg>CRM</button><button type="button" class="tchip" style="--i:1" data-tip="ABIL, Flamengo, IRP, SIFH, Alazzaz"><svg class="ic" aria-hidden="true"><use href="#t-trend"/></svg>Sales</button><button type="button" class="tchip" style="--i:2" data-tip="ABIL: routes, van sales, loyalty and field reports"><svg class="ic" aria-hidden="true"><use href="#t-phone"/></svg>Mobile Sales</button><button type="button" class="tchip" style="--i:3" data-tip="IRP, Kafala, CGA, CKHL, AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-cart"/></svg>Purchase</button><button type="button" class="tchip" style="--i:4" data-tip="ABIL, Flamengo, CGA, AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-box"/></svg>Inventory</button><button type="button" class="tchip" style="--i:5" data-tip="ABIL (work centers, quality, scrap), GroupNova"><svg class="ic" aria-hidden="true"><use href="#t-tool"/></svg>Manufacturing</button><button type="button" class="tchip" style="--i:6" data-tip="Thompson Electronics, Ibokinkay, KayClaudi, ZJC POS, Flowers by EA"><svg class="ic" aria-hidden="true"><use href="#t-card"/></svg>Point of Sale</button><button type="button" class="tchip" style="--i:7" data-tip="CKHL, CLC, SIFH, IRP, Trace Trading"><svg class="ic" aria-hidden="true"><use href="#t-percent"/></svg>Accounting &amp; VAT</button><button type="button" class="tchip" style="--i:8" data-tip="HHRD, Bolt, Malatan, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-users"/></svg>HR &amp; Payroll</button><button type="button" class="tchip" style="--i:9" data-tip="CKHL, HHRD"><svg class="ic" aria-hidden="true"><use href="#t-clip"/></svg>Project</button><button type="button" class="tchip" style="--i:10" data-tip="AMARANTH, SSOL"><svg class="ic" aria-hidden="true"><use href="#t-buoy"/></svg>Helpdesk &amp; Maintenance</button><button type="button" class="tchip" style="--i:11" data-tip="GroupNova (fleet and fuel), CKHL (freight and manifests)"><svg class="ic" aria-hidden="true"><use href="#t-truck"/></svg>Fleet &amp; Logistics</button><button type="button" class="tchip" style="--i:12" data-tip="HHRD (digital signatures), CKHL"><svg class="ic" aria-hidden="true"><use href="#t-file"/></svg>Documents &amp; Sign</button><button type="button" class="tchip" style="--i:13" data-tip="SSOL (applicants and website applications)"><svg class="ic" aria-hidden="true"><use href="#t-userplus"/></svg>Recruitment</button><button type="button" class="tchip" style="--i:14" data-tip="CKHL, AMARANTH, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-globe"/></svg>Website &amp; Portals</button></div></div>
+        <div class="tk" style="--ck:var(--accent2)"><h3><i></i>Technical</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Every project, from Odoo 13 to 20"><svg class="ic" aria-hidden="true"><use href="#t-layers"/></svg>Python &amp; Odoo ORM</button><button type="button" class="tchip" style="--i:1" data-tip="ABIL mobile sales and POS screens, custom widgets"><svg class="ic" aria-hidden="true"><use href="#t-code"/></svg>OWL &amp; JavaScript</button><button type="button" class="tchip" style="--i:2" data-tip="Invoices, statements, labels, cheques and views"><svg class="ic" aria-hidden="true"><use href="#t-printer"/></svg>QWeb &amp; XML</button><button type="button" class="tchip" style="--i:3" data-tip="Reports, data fixes and database upgrades"><svg class="ic" aria-hidden="true"><use href="#t-db"/></svg>PostgreSQL</button><button type="button" class="tchip" style="--i:4" data-tip="IRP, ABIL, CKHL, Flamengo, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-grid"/></svg>Excel reports</button><button type="button" class="tchip" style="--i:5" data-tip="SIFH monthly statements and emailed reports"><svg class="ic" aria-hidden="true"><use href="#t-clock"/></svg>Cron jobs</button><button type="button" class="tchip" style="--i:6" data-tip="Journal, company and warehouse restrictions at ABIL, CKHL, IRP, SIFH and AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-shield"/></svg>Access &amp; security</button><button type="button" class="tchip" style="--i:7" data-tip="HHRD (13 to 17), AMARANTH (to 19), Clydesdale Club (to 20)"><svg class="ic" aria-hidden="true"><use href="#t-sync"/></svg>Upgrades</button><button type="button" class="tchip" style="--i:8" data-tip="IRP (Excel import to sales and purchase), client data loads"><svg class="ic" aria-hidden="true"><use href="#t-import"/></svg>Data import</button><button type="button" class="tchip" style="--i:9" data-tip="Payment, e-invoicing and AI services across client projects"><svg class="ic" aria-hidden="true"><use href="#t-link"/></svg>APIs</button><button type="button" class="tchip" style="--i:10" data-tip="Scheduled database backups on client servers"><svg class="ic" aria-hidden="true"><use href="#t-archive"/></svg>Backups</button><button type="button" class="tchip" style="--i:11" data-tip="Version control for client modules"><svg class="ic" aria-hidden="true"><use href="#t-branch"/></svg>Git &amp; GitHub</button><button type="button" class="tchip" style="--i:12" data-tip="Odoo installs, environments and database upgrades"><svg class="ic" aria-hidden="true"><use href="#t-server"/></svg>Linux servers</button></div></div>
+        <div class="tk" style="--ck:#f0a63a"><h3><i></i>Connected systems</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Trace Trading (Saudi Arabia)"><svg class="ic" aria-hidden="true"><use href="#t-qr"/></svg>ZATCA e-invoicing</button><button type="button" class="tchip" style="--i:1" data-tip="Visio Retail (Pakistan POS)"><svg class="ic" aria-hidden="true"><use href="#t-file"/></svg>FBR e-invoicing</button><button type="button" class="tchip" style="--i:2" data-tip="Visio Retail"><svg class="ic" aria-hidden="true"><use href="#t-bag"/></svg>Shopify</button><button type="button" class="tchip" style="--i:3" data-tip="Trace Trading"><svg class="ic" aria-hidden="true"><use href="#t-box"/></svg>Zid store</button><button type="button" class="tchip" style="--i:4" data-tip="Thompson Electronics"><svg class="ic" aria-hidden="true"><use href="#t-chat"/></svg>WhatsApp</button><button type="button" class="tchip" style="--i:5" data-tip="AllNetworks (Stripe fees), CKHL and FESCO (payment integration)"><svg class="ic" aria-hidden="true"><use href="#t-card"/></svg>Stripe &amp; payments</button><button type="button" class="tchip" style="--i:6" data-tip="Bolt, Ibokinkay (ZKTeco devices)"><svg class="ic" aria-hidden="true"><use href="#t-chip"/></svg>Biometric attendance</button><button type="button" class="tchip" style="--i:7" data-tip="Exonet AI, FESCO chatbot"><svg class="ic" aria-hidden="true"><use href="#t-zap"/></svg>ChatGPT &amp; AI</button><button type="button" class="tchip" style="--i:8" data-tip="ABIL (automatic label and report printing)"><svg class="ic" aria-hidden="true"><use href="#t-printer"/></svg>Direct printing</button><button type="button" class="tchip" style="--i:9" data-tip="CKHL (shipping manifests)"><svg class="ic" aria-hidden="true"><use href="#t-sync"/></svg>EDI imports</button><button type="button" class="tchip" style="--i:10" data-tip="ABIL (multi-UoM barcode), KayClaudi and SIFH (product labels)"><svg class="ic" aria-hidden="true"><use href="#t-barcode"/></svg>Barcode &amp; labels</button><button type="button" class="tchip" style="--i:11" data-tip="AllNetworks (customer location maps)"><svg class="ic" aria-hidden="true"><use href="#t-pin"/></svg>Google Maps</button><button type="button" class="tchip" style="--i:12" data-tip="AllNetworks, CKHL, IRP (automated emails and templates)"><svg class="ic" aria-hidden="true"><use href="#t-mail"/></svg>Email notifications</button></div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="alt" id="projects">
     <div class="wrap">
       <p class="eyebrow">Projects</p>
@@ -433,28 +728,78 @@ input:focus,textarea:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 
   <section id="contact">
     <div class="wrap">
       <p class="eyebrow">Contact</p>
-      <h2>Let's talk about your project</h2>
-      <p class="lead">Have an Odoo project in mind, or need a hand with an existing system? I'd love to hear about it. I'm open to on-site, hybrid and remote work, and I usually reply within a day.</p>
-      <div class="contact-box">
-        <form id="contactForm" autocomplete="on">
-          <input name="name" placeholder="Your name" autocomplete="name" maxlength="80" required>
-          <input name="email" type="email" placeholder="Your email" autocomplete="email" maxlength="120" required>
-          <textarea name="message" rows="5" placeholder="How can I help?" maxlength="1200" required></textarea>
-          <button class="btn primary" type="submit">Send message</button>
-          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-        </form>
-        <div class="info">
-          <p>📧 <a href="mailto:i.fahadnouman@gmail.com">i.fahadnouman@gmail.com</a></p>
-          <p>💼 <a href="https://www.linkedin.com/in/muhammad-fahad-nouman-b13093307" target="_blank" rel="noopener">linkedin.com/in/muhammad-fahad-nouman</a></p>
-          <p>📍 Lahore, Punjab, Pakistan</p>
-          <p>🟢 Open to work · On-site · Hybrid · Remote</p>
+      <div class="contact-grid">
+        <div>
+          <h2>Let's plan your<br>Odoo project</h2>
+          <p class="lead" style="margin-bottom:0">Pick a few options and a ready-to-send message is written for you. Send it on WhatsApp or by email, or simply copy it. Nothing is stored on this page.</p>
+          <p class="reach">Or reach me directly</p>
+          <div class="crow"><span class="cico mail"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span><a class="ctext" href="mailto:i.fahadnouman@gmail.com">i.fahadnouman@gmail.com</a><button class="copybtn" type="button" data-copy="i.fahadnouman@gmail.com">Copy</button></div>
+          <div class="crow"><span class="cico wa"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></span><a class="ctext" href="https://wa.me/923024270257" target="_blank" rel="noopener">+92 302 4270257 <small>(WhatsApp)</small></a><button class="copybtn" type="button" data-copy="+92 302 4270257">Copy</button></div>
+          <div class="crow"><span class="cico in"><svg class="ic" aria-hidden="true"><use href="#i-in"/></svg></span><a class="ctext" href="https://www.linkedin.com/in/muhammad-fahad-nouman-b13093307" target="_blank" rel="noopener">linkedin.com/in/muhammad-fahad-nouman</a></div>
+          <p class="where"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg> Lahore, Pakistan · On-site, hybrid or remote</p>
+        </div>
+        <div class="qcard" id="quote">
+          <h3>What do you need help with?</h3>
+          <div class="opts"><label class="opt"><input type="radio" name="need" value="New implementation"><span>New implementation</span></label><label class="opt"><input type="radio" name="need" value="Custom modules"><span>Custom modules</span></label><label class="opt"><input type="radio" name="need" value="Upgrade or migration"><span>Upgrade or migration</span></label><label class="opt"><input type="radio" name="need" value="POS &amp; retail"><span>POS &amp; retail</span></label><label class="opt"><input type="radio" name="need" value="Accounting &amp; e-invoicing"><span>Accounting &amp; e-invoicing</span></label><label class="opt"><input type="radio" name="need" value="Reports &amp; dashboards"><span>Reports &amp; dashboards</span></label></div>
+          <h3>When would you like to begin?</h3>
+          <div class="opts"><label class="opt"><input type="radio" name="when" value="As soon as possible"><span>As soon as possible</span></label><label class="opt"><input type="radio" name="when" value="Within 1–3 months"><span>Within 1–3 months</span></label><label class="opt"><input type="radio" name="when" value="Just exploring"><span>Just exploring</span></label></div>
+          <div class="qrow">
+            <input name="name" placeholder="Your name (optional)" autocomplete="name" maxlength="80">
+            <input name="company" placeholder="Company (optional)" autocomplete="organization" maxlength="80">
+          </div>
+          <div class="msgbox">
+            <label for="qMessage">Your message</label>
+            <textarea id="qMessage" rows="3" maxlength="1200"></textarea>
+          </div>
+          <div class="actions">
+            <button class="btn primary" type="button" data-act="wa">Send on WhatsApp</button>
+            <button class="btn ghost" type="button" data-act="email">Send by email</button>
+            <button class="linkbtn" type="button" data-act="copy">Copy message</button>
+          </div>
+          <p class="form-note" id="qNote" role="status" aria-live="polite"></p>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="site"><div class="wrap">© <span id="y"></span> Muhammad Fahad Nouman. All rights reserved.</div></footer>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a href="#top" class="logo f-logo"><span class="logo-name">Muhammad Fahad Nouman</span><span class="logo-sub">Odoo ERP Architect</span></a>
+        <p class="f-tag">Odoo ERP Architect · Techno-functional consultant</p>
+        <p class="f-desc">Custom Odoo development, migrations and functional consulting, from the first requirements workshop to a calm go-live.</p>
+        <p class="f-line"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg> <a href="mailto:i.fahadnouman@gmail.com">i.fahadnouman@gmail.com</a></p>
+        <p class="f-line"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> <a href="https://wa.me/923024270257" target="_blank" rel="noopener">+92 302 4270257</a> <span>(WhatsApp)</span></p>
+        <p class="f-line"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg> Lahore, Pakistan · open to remote work</p>
+        <div class="f-social">
+          <a href="https://www.linkedin.com/in/muhammad-fahad-nouman-b13093307" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic" aria-hidden="true"><use href="#i-in"/></svg></a>
+          <a href="https://wa.me/923024270257" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg></a>
+          <a href="mailto:i.fahadnouman@gmail.com" aria-label="Email"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Navigation</h4>
+        <a href="#expertise">Expertise</a><a href="#services">Areas</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+      </div>
+      <div class="f-col">
+        <h4>Odoo services</h4>
+        <a href="#expertise">Implementation</a><a href="#expertise">Custom modules</a><a href="#expertise">Upgrades &amp; migration</a><a href="#expertise">Integrations &amp; compliance</a><a href="#services">Reports &amp; dashboards</a>
+      </div>
+      <div class="f-col">
+        <h4>Get in touch</h4>
+        <a class="f-link" href="https://www.linkedin.com/in/muhammad-fahad-nouman-b13093307" target="_blank" rel="noopener"><b>LinkedIn profile</b><span>See my experience and recommendations</span></a>
+        <a class="f-link" href="https://wa.me/923024270257" target="_blank" rel="noopener"><b>Chat on WhatsApp</b><span>+92 302 4270257</span></a>
+        <a class="f-link" href="#contact"><b>Start a conversation</b><span>Tell me about your Odoo project</span></a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© <span id="y"></span> Muhammad Fahad Nouman. All rights reserved.</span>
+      <a href="#top" class="f-top"><svg class="ic" aria-hidden="true"><use href="#i-up"/></svg> Back to top</a>
+    </div>
+  </div>
+</footer>
 <button id="totop" aria-label="Back to top">↑</button>
 
 <script>
@@ -464,7 +809,7 @@ document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
   document.querySelectorAll('.proj').forEach(p=>{p.hidden=!(f==='all'||p.dataset.v.split(' ').includes(f))});
 }));
 (function(){
-  const els=document.querySelectorAll('.card,.stat,.step,.job,h2');
+  const els=document.querySelectorAll('.card,.stat,.step,.job,h2,.crow,.qcard,.tk');
   if(!('IntersectionObserver' in window)){return}
   els.forEach((e,i)=>{e.classList.add('reveal');e.style.transitionDelay=((i%4)*70)+'ms'});
   const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');const t=en.target;setTimeout(()=>{t.style.transitionDelay=''},1000);io.unobserve(t)}}),{threshold:.12});
@@ -484,7 +829,7 @@ document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
   }
   // typing roles
   const el=document.getElementById('typed');
-  const roles=['Odoo ERP Developer','Functional Consultant','POS & Retail Specialist','Accounting & Reports Expert','Migration & Upgrade Specialist'];
+  const roles=['an Odoo ERP Architect','an Odoo ERP Developer','a Functional Consultant','a POS & Retail Specialist','an Accounting & Reports Expert','a Migration & Upgrade Specialist'];
   if(el){
     if(reduce){el.textContent=roles[0]}
     else{let r=0,i=0,del=false;(function tick(){const w=roles[r];el.textContent=w.slice(0,i);
@@ -533,31 +878,6 @@ document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
     }).catch(function(){});
   })}
 
-  // --- contact form -> opens the visitor's email app, message only ---
-  var TO='i.fahadnouman@gmail.com';
-  function buildMessage(name,email,msg){
-    return {
-      subject:"I'd like to work with you",
-      body:msg
-    };
-  }
-  function mailtoUrl(m){
-    return 'mailto:'+TO+'?subject='+encodeURIComponent(m.subject)+'&body='+encodeURIComponent(m.body.replace(/\n/g,'\r\n'));
-  }
-  function gmailUrl(m){
-    return 'https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(m.subject)+'&body='+encodeURIComponent(m.body);
-  }
-  var form=document.getElementById('contactForm'),note=document.getElementById('formNote');
-  if(form){form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var g=function(n){return form.querySelector('[name="'+n+'"]').value.trim()};
-    var m=buildMessage(g('name'),g('email'),g('message'));
-    note.textContent='Opening your email app… If nothing opens, ';
-    var a=document.createElement('a');a.href=gmailUrl(m);a.target='_blank';a.rel='noopener';a.textContent='open it in Gmail';
-    note.appendChild(a);note.appendChild(document.createTextNode(' or write to '+TO+'.'));
-    window.location.href=mailtoUrl(m);
-  })}
-
   if(reduce)return;
 
   // --- cursor glow + magnetic buttons + hero parallax (mouse devices only) ---
@@ -591,6 +911,87 @@ document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
       tl.style.setProperty('--tp',Math.min(1,Math.max(0,(innerHeight*.8-r.top)/r.height)).toFixed(3))};
     addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
   }
+})();
+(function(){
+  // Quick-message card: builds a ready-to-send message, then WhatsApp / email / copy.
+  var TO='i.fahadnouman@gmail.com', WA='923024270257', SUBJECT="I'd like to work with you";
+  var card=document.getElementById('quote');
+  if(!card)return;
+  var msg=document.getElementById('qMessage'),note=document.getElementById('qNote'),dirty=false,timer;
+
+  function pick(n){var e=card.querySelector('input[name="'+n+'"]:checked');return e?e.value:''}
+  function val(n){var e=card.querySelector('input[name="'+n+'"]');return e?e.value.trim():''}
+  function buildText(need,when,name,company){
+    var L=['Hi Fahad,','','I need help with: '+(need||'an Odoo project')+'.'];
+    if(when)L.push('I would like to start: '+when+'.');
+    var who=[name,company].filter(Boolean).join(', ');
+    if(who){L.push('');L.push(who)}
+    return L.join('\n');
+  }
+  function plain(h){var t=document.createElement('textarea');t.innerHTML=h;return t.value}
+  function refresh(){if(!dirty)msg.value=buildText(plain(pick('need')),plain(pick('when')),val('name'),val('company'))}
+  function say(t,link){
+    note.textContent=t;
+    if(link){var a=document.createElement('a');a.href=link.href;a.target='_blank';a.rel='noopener';a.textContent=link.text;note.appendChild(a);note.appendChild(document.createTextNode(link.after||''))}
+    clearTimeout(timer);timer=setTimeout(function(){note.textContent=''},9000);
+  }
+  function copy(text,done){
+    function ok(){done&&done()}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,fallback)}else fallback();
+    function fallback(){var t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){}t.remove()}
+  }
+  card.addEventListener('input',function(e){
+    if(e.target===msg){dirty=msg.value.trim()!==''}else refresh();
+  });
+  card.addEventListener('change',function(e){if(e.target!==msg)refresh()});
+  card.addEventListener('click',function(e){
+    var b=e.target.closest('[data-act]');if(!b)return;
+    var text=msg.value.trim()||buildText('','','','');
+    var act=b.getAttribute('data-act');
+    if(act==='wa'){
+      window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener');
+      say('Opening WhatsApp…');
+    }else if(act==='email'){
+      say('Opening your email app… If nothing opens, ',{href:'https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(TO)+'&su='+encodeURIComponent(SUBJECT)+'&body='+encodeURIComponent(text),text:'open it in Gmail',after:' or write to '+TO+'.'});
+      window.location.href='mailto:'+TO+'?subject='+encodeURIComponent(SUBJECT)+'&body='+encodeURIComponent(text.replace(/\n/g,'\r\n'));
+    }else{
+      copy(text,function(){say('Message copied. Paste it anywhere you like.')});
+    }
+  });
+  // copy buttons next to email / phone
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var old=b.textContent;
+      copy(b.getAttribute('data-copy'),function(){b.textContent='Copied ✓';setTimeout(function(){b.textContent=old},1600)});
+    });
+  });
+  refresh();
+})();
+(function(){
+  // Toolkit: hover / focus / tap a pill to see where it was used.
+  var chips=document.querySelectorAll('.tchip');
+  if(!chips.length)return;
+  var tip=document.createElement('div');tip.className='tk-tip';tip.setAttribute('role','tooltip');tip.id='tkTip';
+  document.body.appendChild(tip);
+  function show(el){
+    tip.textContent='Used at: '+el.getAttribute('data-tip');
+    el.setAttribute('aria-describedby','tkTip');
+    var r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    var x=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2));
+    var y=r.top-h-10;if(y<8)y=r.bottom+10;
+    tip.style.transform='translate('+x+'px,'+y+'px)';
+    tip.classList.add('on');
+  }
+  function hide(){tip.classList.remove('on')}
+  chips.forEach(function(c){
+    c.addEventListener('mouseenter',function(){show(c)});
+    c.addEventListener('mouseleave',hide);
+    c.addEventListener('focus',function(){show(c)});
+    c.addEventListener('blur',hide);
+    c.addEventListener('click',function(){show(c)});   // tap on phones
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.tchip'))hide()});
+  addEventListener('scroll',hide,{passive:true});
 })();
 document.getElementById('y').textContent = new Date().getFullYear();
 document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.links').classList.remove('open')));
