@@ -16,16 +16,20 @@ try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia
 <style>
 :root{
   color-scheme:light;
-  /* Light theme uses Odoo's brand colours: purple #714B67 and teal #017E84 */
+  /* Official Odoo brand colours (odoo.com/page/brand-assets) */
+  --odoo-purple:#714B67; --odoo-teal:#017E84; --odoo-gray:#8F8F8F;
+  --coral:#E46E78; --green:#21B799; --slate:#5B899E; --gold:#E4A900;
   --bg:#ffffff; --bg2:#f7f2f6; --text:#212529; --muted:#5d6670;
-  --accent:#714B67; --accent2:#017E84; --card:#ffffff; --border:#e7dde4;
+  --accent:#714B67; --accent2:#017E84; --card:#ffffff; --border:#e3e0e3;
+  /* readable tints for text / icons (same as the brand colours in light mode) */
+  --accent-ink:#714B67; --accent2-ink:#017E84; --green-ink:#178069; --coral-ink:#c14b57; --slate-ink:#3f6a80;
   --blob:.16; --shadow:rgba(113,75,103,.28);
   --radius:16px; --max:1100px;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){color-scheme:dark;--bg:#0e1017;--bg2:#151824;--text:#eceef6;--muted:#9aa0b8;--card:#171b29;--border:#262b3d;--accent:#8b78ff;--accent2:#00b894;--blob:.28;--shadow:rgba(91,61,245,.28)}
+  :root:not([data-theme="light"]){color-scheme:dark;--bg:#16111a;--bg2:#1d1722;--text:#f3eef4;--muted:#aa9fb1;--card:#211a27;--border:#35293a;--accent:#714B67;--accent2:#017E84;--accent-ink:#cfa3c5;--accent2-ink:#3db5bb;--green-ink:#3ed6b6;--coral-ink:#ef8c95;--slate-ink:#8fb6c9;--blob:.42;--shadow:rgba(113,75,103,.5)}
 }
-:root[data-theme="dark"]{color-scheme:dark;--bg:#0e1017;--bg2:#151824;--text:#eceef6;--muted:#9aa0b8;--card:#171b29;--border:#262b3d;--accent:#8b78ff;--accent2:#00b894;--blob:.28;--shadow:rgba(91,61,245,.28)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#16111a;--bg2:#1d1722;--text:#f3eef4;--muted:#aa9fb1;--card:#211a27;--border:#35293a;--accent:#714B67;--accent2:#017E84;--accent-ink:#cfa3c5;--accent2-ink:#3db5bb;--green-ink:#3ed6b6;--coral-ink:#ef8c95;--slate-ink:#8fb6c9;--blob:.42;--shadow:rgba(113,75,103,.5)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
@@ -36,7 +40,7 @@ section.alt{background:var(--bg2)}
 h1,h2,h3{line-height:1.15}
 h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:12px}
 .lead{color:var(--muted);max-width:640px;margin-bottom:40px}
-.eyebrow{color:var(--accent);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.eyebrow{color:var(--accent-ink);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
 
 /* nav */
 header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
@@ -59,7 +63,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 /* hero */
 .hero{padding:96px 0 72px}
 .hero h1{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:18px}
-.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 span{background:linear-gradient(90deg,var(--accent-ink),var(--accent2-ink));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:var(--muted);max-width:620px;font-size:1.1rem;margin-bottom:28px}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
 .badges{display:flex;gap:10px;flex-wrap:wrap}
@@ -71,9 +75,9 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .chip.active,.chip:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 .proj{display:flex;flex-direction:column;gap:2px}
 .pmeta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
-.vpill{font-size:.75rem;font-weight:600;color:var(--accent);background:var(--bg2);border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+.vpill{font-size:.75rem;font-weight:600;color:var(--accent-ink);background:var(--bg2);border:1px solid var(--border);border-radius:999px;padding:3px 10px}
 .ind{font-size:.76rem;color:var(--muted)}
-.ptype{color:var(--accent2)!important;font-weight:600;font-size:.86rem!important;margin-bottom:6px}
+.ptype{color:var(--accent2-ink)!important;font-weight:600;font-size:.86rem!important;margin-bottom:6px}
 .proj[hidden]{display:none}
 /* hero (centered) + animation */
 .hero{position:relative;overflow:hidden;text-align:center}
@@ -116,7 +120,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
 @media(max-width:1000px){.floaters{display:none}}
 .typer{font-size:1.25rem!important;color:var(--text)!important;margin-bottom:12px!important;min-height:1.9em}
-.typer #typed{color:var(--accent);font-weight:700}
+.typer #typed{color:var(--accent-ink);font-weight:700}
 .caret{display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:3px;vertical-align:-3px;animation:blink 1s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
 .hero-text>*:nth-child(6){animation-delay:.9s}
@@ -145,7 +149,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
-.stat b{display:block;font-size:2.2rem;color:var(--accent)}
+.stat b{display:block;font-size:2.2rem;color:var(--accent-ink)}
 .stat span{color:var(--muted);font-size:.92rem}
 
 /* cards */
@@ -182,14 +186,14 @@ form{display:grid;gap:12px}
 input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font:inherit}
 input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
 .info p{margin-bottom:10px;color:var(--muted)}
-.info a{color:var(--accent)}
+.info a{color:var(--accent-ink)}
 footer.site{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem;text-align:center}
 
 /* ===== theme toggle, nav ===== */
 body{transition:background-color .35s,color .35s}
 .nav-right{display:flex;align-items:center;gap:14px}
 .theme-btn{position:relative;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;display:grid;place-items:center;overflow:hidden;transition:border-color .2s,background .3s,translate .2s}
-.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent-ink)}
 .theme-btn svg{position:absolute;width:20px;height:20px;transition:transform .55s cubic-bezier(.4,1.6,.5,1),opacity .3s}
 .theme-btn .moon{opacity:1;transform:none}
 .theme-btn .sun{opacity:0;transform:rotate(-90deg) scale(.3)}
@@ -226,7 +230,7 @@ h2.reveal.in::after{width:64px}
 @keyframes grow{from{width:0}to{width:22px}}
 .hero .eyebrow{justify-content:center}
 .form-note{font-size:.9rem;color:var(--muted);min-height:1.4em}
-.form-note a{color:var(--accent);text-decoration:underline}
+.form-note a{color:var(--accent-ink);text-decoration:underline}
 textarea{resize:vertical}
 @media(prefers-reduced-motion:reduce){#cursor-glow{display:none}.timeline::before{transform:none}h2.reveal::after{width:64px}}
 
@@ -235,7 +239,7 @@ textarea{resize:vertical}
 
 /* ===== photo hover + more hover effects ===== */
 .logo{display:inline-block;transition:transform .25s cubic-bezier(.3,1.6,.5,1),color .25s}
-.logo:hover{transform:scale(1.06);color:var(--accent)}
+.logo:hover{transform:scale(1.06);color:var(--accent-ink)}
 .links a:not(.btn){transition:transform .2s,color .2s}
 .links a:not(.btn):hover{transform:translateY(-2px);color:var(--text)}
 .theme-btn svg{transition:transform .55s cubic-bezier(.4,1.6,.5,1),opacity .3s,rotate .4s}
@@ -246,9 +250,9 @@ textarea{resize:vertical}
 .btn.ghost:hover::before{transform:none}
 .btn.ghost:hover{color:#fff}
 .badge{transition:transform .3s cubic-bezier(.3,1.6,.5,1),border-color .2s,color .2s,background .2s}
-.badge:hover{transform:translateY(-4px) rotate(-2deg);border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--card) 88%,var(--accent))}
+.badge:hover{transform:translateY(-4px) rotate(-2deg);border-color:var(--accent);color:var(--accent-ink);background:color-mix(in srgb,var(--card) 88%,var(--accent))}
 .floaters span{pointer-events:auto;transition:scale .3s cubic-bezier(.3,1.6,.5,1),color .2s,border-color .2s,background .2s}
-.floaters span:hover{scale:1.3;color:var(--accent);border-color:var(--accent)}
+.floaters span:hover{scale:1.3;color:var(--accent-ink);border-color:var(--accent)}
 .stat b{transform-origin:left center}
 .stat:hover b{animation:numpop .55s cubic-bezier(.3,1.6,.5,1)}
 @keyframes numpop{0%{transform:scale(1)}50%{transform:scale(1.28)}100%{transform:scale(1)}}
@@ -284,13 +288,13 @@ input:focus,textarea:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 
 .crow{display:flex;align-items:center;gap:14px;padding:11px 14px;border:1px solid var(--border);background:var(--card);border-radius:14px;margin-bottom:12px;transition:transform .25s cubic-bezier(.3,1.4,.5,1),border-color .2s,box-shadow .25s,opacity .6s}
 .crow:hover{transform:translateX(6px);border-color:var(--accent);box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 16%,transparent)}
 .cico{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;flex:none}
-.cico.mail{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
-.cico.wa{background:color-mix(in srgb,#25D366 18%,transparent);color:#1a9e4d}
-.cico.in{background:color-mix(in srgb,#0a66c2 16%,transparent);color:#0a66c2}
+.cico.mail{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent-ink)}
+.cico.wa{background:color-mix(in srgb,#21B799 18%,transparent);color:var(--green-ink)}
+.cico.in{background:color-mix(in srgb,#5B899E 20%,transparent);color:var(--slate-ink)}
 .ctext{flex:1;font-weight:600;min-width:0;overflow-wrap:anywhere}
 .ctext small{font-weight:500;color:var(--muted)}
-.ctext:hover{color:var(--accent)}
-.copybtn{border:1px solid var(--border);background:var(--bg2);color:var(--accent);border-radius:8px;padding:6px 12px;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.ctext:hover{color:var(--accent-ink)}
+.copybtn{border:1px solid var(--border);background:var(--bg2);color:var(--accent-ink);border-radius:8px;padding:6px 12px;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s,transform .2s}
 .copybtn:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
 .where{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.92rem;margin-top:6px}
 .qcard{border:1px solid var(--border);background:var(--card);border-radius:24px;padding:28px;transition:opacity .6s,transform .6s}
@@ -316,7 +320,7 @@ input:focus,textarea:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 
 button.btn{font:inherit;font-weight:600;cursor:pointer;line-height:1.6}
 button.btn.ghost{background:transparent;color:var(--text)}
 button.btn.ghost:hover{color:#fff}
-.linkbtn{background:none;border:none;color:var(--accent);font:inherit;font-weight:600;cursor:pointer;padding:10px 6px}
+.linkbtn{background:none;border:none;color:var(--accent-ink);font:inherit;font-weight:600;cursor:pointer;padding:10px 6px}
 .linkbtn:hover{text-decoration:underline}
 
 /* ===== footer ===== */
@@ -326,11 +330,11 @@ button.btn.ghost:hover{color:#fff}
 @media(max-width:560px){.f-grid{grid-template-columns:1fr}}
 .f-logo{margin-bottom:14px}
 .f-logo .logo-name{font-size:1.5rem}
-.f-tag{color:var(--accent);font-weight:600;margin-bottom:10px}
+.f-tag{color:var(--accent-ink);font-weight:600;margin-bottom:10px}
 .f-desc{color:var(--muted);font-size:.95rem;margin-bottom:16px;max-width:380px}
 .f-line{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:.95rem}
-.f-line .ic{color:var(--accent2)}
-.f-line a:hover{color:var(--accent)}
+.f-line .ic{color:var(--accent2-ink)}
+.f-line a:hover{color:var(--accent-ink)}
 .f-line span{color:var(--muted)}
 .f-social{display:flex;gap:10px;margin-top:18px}
 .f-social a{width:42px;height:42px;border:1px solid var(--border);border-radius:12px;display:grid;place-items:center;background:var(--card);transition:transform .25s cubic-bezier(.3,1.6,.5,1),background .2s,color .2s,border-color .2s}
@@ -338,14 +342,14 @@ button.btn.ghost:hover{color:#fff}
 .f-col h4{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .f-col h4::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent2)}
 .f-col>a:not(.f-link){display:block;color:var(--muted);padding:5px 0;transition:color .2s,transform .2s}
-.f-col>a:not(.f-link):hover{color:var(--accent);transform:translateX(5px)}
+.f-col>a:not(.f-link):hover{color:var(--accent-ink);transform:translateX(5px)}
 .f-link{display:block;border:1px solid var(--border);background:color-mix(in srgb,var(--card) 80%,transparent);border-radius:14px;padding:13px 16px;margin-bottom:12px;transition:transform .25s cubic-bezier(.3,1.4,.5,1),border-color .2s,box-shadow .25s}
 .f-link:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 16%,transparent)}
 .f-link b{display:block;font-size:.95rem}
 .f-link span{font-size:.82rem;color:var(--muted)}
 .f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:48px;padding:22px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
 .f-top{display:inline-flex;align-items:center;gap:6px;transition:color .2s,transform .2s}
-.f-top:hover{color:var(--accent);transform:translateY(-2px)}
+.f-top:hover{color:var(--accent-ink);transform:translateY(-2px)}
 
 /* ===== contact card: same height as the left column, more compact ===== */
 .contact-grid{grid-template-columns:1fr 1.2fr;align-items:stretch}
@@ -372,8 +376,8 @@ html,body{overflow-x:clip}
 .hero-text p{margin-left:0;margin-right:0}
 .hero h1{font-size:clamp(2.3rem,4.8vw,3.9rem);line-height:1.05;letter-spacing:-.025em}
 .hero .hero-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--border);border-radius:999px;background:var(--card);font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:22px;max-width:none}
-.hero-pill i{width:8px;height:8px;border-radius:50%;background:#2ecc71;animation:ping 2s ease-out infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(46,204,113,.55)}100%{box-shadow:0 0 0 10px rgba(46,204,113,0)}}
+.hero-pill i{width:8px;height:8px;border-radius:50%;background:#21B799;animation:ping 2s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(33,183,153,.55)}100%{box-shadow:0 0 0 10px rgba(33,183,153,0)}}
 .hero .cta{justify-content:flex-start;margin-bottom:28px}
 .hero .btn{display:inline-flex;align-items:center;gap:9px}
 .hero .btn .ic{width:18px;height:18px}
@@ -382,7 +386,7 @@ html,body{overflow-x:clip}
 .checks{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;max-width:470px}
 .check{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.95rem;transition:transform .25s}
 .check:hover{transform:translateX(5px)}
-.tick{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:none;background:color-mix(in srgb,var(--accent2) 18%,transparent);color:var(--accent2)}
+.tick{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:none;background:color-mix(in srgb,var(--accent2) 18%,transparent);color:var(--accent2-ink)}
 .tick .ic{width:12px;height:12px;stroke-width:3}
 
 .hero-visual{position:relative;min-height:500px;width:100%;max-width:520px;margin:0 auto;display:grid;place-items:center}
@@ -402,13 +406,13 @@ html,body{overflow-x:clip}
 .fcard small{color:var(--muted);font-size:.74rem;display:block}
 .fc-a{top:3%;left:-3%;width:240px}
 .bar{height:5px;border-radius:5px;background:var(--accent2);position:relative;margin:8px 0 10px;overflow:hidden}
-.bar i{position:absolute;right:0;top:0;bottom:0;width:24%;background:#ef6f76;animation:barp 3s ease-in-out infinite}
+.bar i{position:absolute;right:0;top:0;bottom:0;width:24%;background:#E46E78;animation:barp 3s ease-in-out infinite}
 @keyframes barp{50%{width:34%}}
-.alert{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:9px;background:color-mix(in srgb,#ef6f76 16%,transparent);color:#ef6f76;font-weight:600;font-size:.74rem}
+.alert{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:9px;background:color-mix(in srgb,#E46E78 16%,transparent);color:var(--coral-ink);font-weight:600;font-size:.74rem}
 .alert .ic{width:14px;height:14px}
 .fc-b{right:-4%;bottom:21%;width:220px}
 .vers{display:flex;align-items:center;gap:6px;margin:10px 0 8px}
-.vers em{font-style:normal;font-weight:700;font-size:.78rem;padding:4px 8px;border-radius:7px;background:color-mix(in srgb,var(--accent2) 16%,transparent);color:var(--accent2)}
+.vers em{font-style:normal;font-weight:700;font-size:.78rem;padding:4px 8px;border-radius:7px;background:color-mix(in srgb,var(--accent2) 16%,transparent);color:var(--accent2-ink)}
 .vers em.on{background:var(--accent2);color:#fff;animation:glow 2.4s ease-in-out infinite}
 .vers s{display:block;width:9px;height:2px;background:var(--border)}
 @keyframes glow{50%{box-shadow:0 0 0 5px color-mix(in srgb,var(--accent2) 30%,transparent)}}
@@ -419,11 +423,11 @@ html,body{overflow-x:clip}
 .lines i{display:block;height:5px;border-radius:5px;background:var(--border)}
 .lines i:nth-child(2){width:70%}.lines i:nth-child(3){width:45%}
 .vat{font-size:.7rem;color:var(--muted);display:block;margin-bottom:8px}
-.ok{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:9px;background:color-mix(in srgb,#2ecc71 16%,transparent);color:#26a65b;font-weight:600;font-size:.74rem}
+.ok{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:9px;background:color-mix(in srgb,#21B799 16%,transparent);color:var(--green-ink);font-weight:600;font-size:.74rem}
 .ok .ic{width:14px;height:14px;stroke-width:3}
 .fc-d{left:49%;bottom:0;display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-weight:600;white-space:nowrap}
-.dot{width:8px;height:8px;border-radius:50%;background:#2ecc71;animation:ping 2s ease-out infinite}
-.sphere{position:absolute;z-index:2;left:1%;top:46%;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#6ee7da,var(--accent2));box-shadow:0 14px 30px color-mix(in srgb,var(--accent2) 45%,transparent);animation:bob 5s ease-in-out var(--d,0s) infinite;translate:calc(var(--px,0)*var(--mx,30)*1px) calc(var(--py,0)*var(--mx,30)*.8px)}
+.dot{width:8px;height:8px;border-radius:50%;background:#21B799;animation:ping 2s ease-out infinite}
+.sphere{position:absolute;z-index:2;left:1%;top:46%;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#6fd8c4,var(--accent2));box-shadow:0 14px 30px color-mix(in srgb,var(--accent2) 45%,transparent);animation:bob 5s ease-in-out var(--d,0s) infinite;translate:calc(var(--px,0)*var(--mx,30)*1px) calc(var(--py,0)*var(--mx,30)*.8px)}
 @media(max-width:900px){
   .hero{padding:56px 0 64px}
   .hero-grid{grid-template-columns:1fr;gap:36px}
@@ -470,6 +474,27 @@ html,body{overflow-x:clip}
 .tchips{align-content:flex-start}
 .tchip{white-space:nowrap;padding:6px 10px;font-size:.8rem;gap:6px}
 .tchips{gap:8px 7px}
+
+/* floating cards: visible for a few seconds, then only on hover over the photo */
+.fcard,.sphere{transition:translate .3s ease-out,box-shadow .25s,opacity .5s ease,scale .5s cubic-bezier(.3,1.4,.5,1)}
+.cards-hidden .fcard,.cards-hidden .sphere{opacity:0;scale:.78;pointer-events:none}
+.cards-hidden.peek .fcard,.cards-hidden.peek .sphere{opacity:1;scale:1;pointer-events:auto}
+.photo-wrap{cursor:pointer}
+
+/* ===== tiles overlap the photo by about a quarter of their own size ===== */
+.photo-wrap{margin-right:15%}
+.photo-wrap .fc-a{right:auto;bottom:auto;left:-120px;top:-62px;width:240px}
+.photo-wrap .fc-b{left:190px;top:276px;right:auto;bottom:auto;width:220px}
+.photo-wrap .fc-c{left:-116px;top:266px;right:auto;bottom:auto;width:232px}
+.photo-wrap .fc-d{left:150px;top:-27px;right:auto;bottom:auto}
+.photo-wrap .sphere{left:284px;top:150px;right:auto;bottom:auto}
+
+@media(max-width:520px){
+  .photo-wrap{margin:0 auto}
+  .photo-card{width:200px}
+  .photo-wrap .fc-a{left:-86px;top:-50px;width:172px}
+  .photo-wrap .fc-b{left:112px;top:168px;width:170px}
+}
 </style>
 </head>
 <body>
@@ -569,23 +594,23 @@ html,body{overflow-x:clip}
 
       <div class="hero-visual">
         <div class="blob" aria-hidden="true"></div>
-        <div class="photo-wrap"><div class="photo-card"><img class="photo" src="photo.jpg" alt="Muhammad Fahad Nouman" width="420" height="440"></div></div>
+        <div class="photo-wrap"><div class="photo-card"><img class="photo" src="photo.jpg" alt="Muhammad Fahad Nouman" width="420" height="440"></div>
 
         <div class="fcard fc-a" style="--mx:-26;--d:0s" aria-hidden="true">
-          <div class="fc-h"><span class="fic" style="--c:#8f6aa6"></span><b>Sale Order</b><code>SO-0421</code></div>
+          <div class="fc-h"><span class="fic" style="--c:#714B67"></span><b>Sale Order</b><code>SO-0421</code></div>
           <small>Discount limit</small>
           <div class="bar"><i></i></div>
           <div class="alert"><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg> Above limit · sent for approval</div>
         </div>
 
         <div class="fcard fc-b" style="--mx:30;--d:1.2s" aria-hidden="true">
-          <div class="fc-h"><span class="fic" style="--c:#ef6f76"></span><b>Upgrade complete</b></div>
+          <div class="fc-h"><span class="fic" style="--c:#E46E78"></span><b>Upgrade complete</b></div>
           <div class="vers"><em>17</em><s></s><em>18</em><s></s><em>19</em><s></s><em class="on">20</em></div>
           <small>Data and customizations carried over</small>
         </div>
 
         <div class="fcard fc-c" style="--mx:-18;--d:2s" aria-hidden="true">
-          <div class="fc-h"><span class="fic" style="--c:#3aa675"></span><b>Tax invoice</b></div>
+          <div class="fc-h"><span class="fic" style="--c:#21B799"></span><b>Tax invoice</b></div>
           <div class="inv"><svg class="qr" viewBox="0 0 9 9" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="7" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="5" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="8" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="8" y="4" width="1" height="1"/><rect x="1" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="0" y="7" width="1" height="1"/><rect x="1" y="7" width="1" height="1"/><rect x="2" y="7" width="1" height="1"/><rect x="5" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="4" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="7" y="8" width="1" height="1"/></svg><div class="lines"><i></i><i></i><i></i></div></div>
           <code class="vat">VAT 15%</code>
           <div class="ok"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Ready for e-invoicing</div>
@@ -593,6 +618,7 @@ html,body{overflow-x:clip}
 
         <div class="fcard fc-d" style="--mx:22;--d:.6s" aria-hidden="true"><i class="dot"></i>Available for new projects</div>
         <div class="sphere" style="--mx:36;--d:1.6s" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -664,9 +690,9 @@ html,body{overflow-x:clip}
         <p class="lead">Hover or tap any item to see where I used it.</p>
       </div>
       <div class="tk-grid">
-        <div class="tk" style="--ck:var(--accent)"><h3><i></i>Odoo apps</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Alazzaz (CRM to quotation), IBT (CRM enhancements)"><svg class="ic" aria-hidden="true"><use href="#t-funnel"/></svg>CRM</button><button type="button" class="tchip" style="--i:1" data-tip="ABIL, Flamengo, IRP, SIFH, Alazzaz"><svg class="ic" aria-hidden="true"><use href="#t-trend"/></svg>Sales</button><button type="button" class="tchip" style="--i:2" data-tip="ABIL: routes, van sales, loyalty and field reports"><svg class="ic" aria-hidden="true"><use href="#t-phone"/></svg>Mobile Sales</button><button type="button" class="tchip" style="--i:3" data-tip="IRP, Kafala, CGA, CKHL, AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-cart"/></svg>Purchase</button><button type="button" class="tchip" style="--i:4" data-tip="ABIL, Flamengo, CGA, AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-box"/></svg>Inventory</button><button type="button" class="tchip" style="--i:5" data-tip="ABIL (work centers, quality, scrap), GroupNova"><svg class="ic" aria-hidden="true"><use href="#t-tool"/></svg>Manufacturing</button><button type="button" class="tchip" style="--i:6" data-tip="Thompson Electronics, Ibokinkay, KayClaudi, ZJC POS, Flowers by EA"><svg class="ic" aria-hidden="true"><use href="#t-card"/></svg>Point of Sale</button><button type="button" class="tchip" style="--i:7" data-tip="CKHL, CLC, SIFH, IRP, Trace Trading"><svg class="ic" aria-hidden="true"><use href="#t-percent"/></svg>Accounting &amp; VAT</button><button type="button" class="tchip" style="--i:8" data-tip="HHRD, Bolt, Malatan, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-users"/></svg>HR &amp; Payroll</button><button type="button" class="tchip" style="--i:9" data-tip="CKHL, HHRD"><svg class="ic" aria-hidden="true"><use href="#t-clip"/></svg>Project</button><button type="button" class="tchip" style="--i:10" data-tip="AMARANTH, SSOL"><svg class="ic" aria-hidden="true"><use href="#t-buoy"/></svg>Helpdesk &amp; Maintenance</button><button type="button" class="tchip" style="--i:11" data-tip="GroupNova (fleet and fuel), CKHL (freight and manifests)"><svg class="ic" aria-hidden="true"><use href="#t-truck"/></svg>Fleet &amp; Logistics</button><button type="button" class="tchip" style="--i:12" data-tip="HHRD (digital signatures), CKHL"><svg class="ic" aria-hidden="true"><use href="#t-file"/></svg>Documents &amp; Sign</button><button type="button" class="tchip" style="--i:13" data-tip="SSOL (applicants and website applications)"><svg class="ic" aria-hidden="true"><use href="#t-userplus"/></svg>Recruitment</button><button type="button" class="tchip" style="--i:14" data-tip="CKHL, AMARANTH, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-globe"/></svg>Website &amp; Portals</button></div></div>
-        <div class="tk" style="--ck:var(--accent2)"><h3><i></i>Technical</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Every project, from Odoo 13 to 20"><svg class="ic" aria-hidden="true"><use href="#t-layers"/></svg>Python &amp; Odoo ORM</button><button type="button" class="tchip" style="--i:1" data-tip="ABIL mobile sales and POS screens, custom widgets"><svg class="ic" aria-hidden="true"><use href="#t-code"/></svg>OWL &amp; JavaScript</button><button type="button" class="tchip" style="--i:2" data-tip="Invoices, statements, labels, cheques and views"><svg class="ic" aria-hidden="true"><use href="#t-printer"/></svg>QWeb &amp; XML</button><button type="button" class="tchip" style="--i:3" data-tip="Reports, data fixes and database upgrades"><svg class="ic" aria-hidden="true"><use href="#t-db"/></svg>PostgreSQL</button><button type="button" class="tchip" style="--i:4" data-tip="IRP, ABIL, CKHL, Flamengo, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-grid"/></svg>Excel reports</button><button type="button" class="tchip" style="--i:5" data-tip="SIFH monthly statements and emailed reports"><svg class="ic" aria-hidden="true"><use href="#t-clock"/></svg>Cron jobs</button><button type="button" class="tchip" style="--i:6" data-tip="Journal, company and warehouse restrictions at ABIL, CKHL, IRP, SIFH and AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-shield"/></svg>Access &amp; security</button><button type="button" class="tchip" style="--i:7" data-tip="HHRD (13 to 17), AMARANTH (to 19), Clydesdale Club (to 20)"><svg class="ic" aria-hidden="true"><use href="#t-sync"/></svg>Upgrades</button><button type="button" class="tchip" style="--i:8" data-tip="IRP (Excel import to sales and purchase), client data loads"><svg class="ic" aria-hidden="true"><use href="#t-import"/></svg>Data import</button><button type="button" class="tchip" style="--i:9" data-tip="Payment, e-invoicing and AI services across client projects"><svg class="ic" aria-hidden="true"><use href="#t-link"/></svg>APIs</button><button type="button" class="tchip" style="--i:10" data-tip="Scheduled database backups on client servers"><svg class="ic" aria-hidden="true"><use href="#t-archive"/></svg>Backups</button><button type="button" class="tchip" style="--i:11" data-tip="Version control for client modules"><svg class="ic" aria-hidden="true"><use href="#t-branch"/></svg>Git &amp; GitHub</button><button type="button" class="tchip" style="--i:12" data-tip="Odoo installs, environments and database upgrades"><svg class="ic" aria-hidden="true"><use href="#t-server"/></svg>Linux servers</button></div></div>
-        <div class="tk" style="--ck:#f0a63a"><h3><i></i>Connected systems</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Trace Trading (Saudi Arabia)"><svg class="ic" aria-hidden="true"><use href="#t-qr"/></svg>ZATCA e-invoicing</button><button type="button" class="tchip" style="--i:1" data-tip="Visio Retail (Pakistan POS)"><svg class="ic" aria-hidden="true"><use href="#t-file"/></svg>FBR e-invoicing</button><button type="button" class="tchip" style="--i:2" data-tip="Visio Retail"><svg class="ic" aria-hidden="true"><use href="#t-bag"/></svg>Shopify</button><button type="button" class="tchip" style="--i:3" data-tip="Trace Trading"><svg class="ic" aria-hidden="true"><use href="#t-box"/></svg>Zid store</button><button type="button" class="tchip" style="--i:4" data-tip="Thompson Electronics"><svg class="ic" aria-hidden="true"><use href="#t-chat"/></svg>WhatsApp</button><button type="button" class="tchip" style="--i:5" data-tip="AllNetworks (Stripe fees), CKHL and FESCO (payment integration)"><svg class="ic" aria-hidden="true"><use href="#t-card"/></svg>Stripe &amp; payments</button><button type="button" class="tchip" style="--i:6" data-tip="Bolt, Ibokinkay (ZKTeco devices)"><svg class="ic" aria-hidden="true"><use href="#t-chip"/></svg>Biometric attendance</button><button type="button" class="tchip" style="--i:7" data-tip="Exonet AI, FESCO chatbot"><svg class="ic" aria-hidden="true"><use href="#t-zap"/></svg>ChatGPT &amp; AI</button><button type="button" class="tchip" style="--i:8" data-tip="ABIL (automatic label and report printing)"><svg class="ic" aria-hidden="true"><use href="#t-printer"/></svg>Direct printing</button><button type="button" class="tchip" style="--i:9" data-tip="CKHL (shipping manifests)"><svg class="ic" aria-hidden="true"><use href="#t-sync"/></svg>EDI imports</button><button type="button" class="tchip" style="--i:10" data-tip="ABIL (multi-UoM barcode), KayClaudi and SIFH (product labels)"><svg class="ic" aria-hidden="true"><use href="#t-barcode"/></svg>Barcode &amp; labels</button><button type="button" class="tchip" style="--i:11" data-tip="AllNetworks (customer location maps)"><svg class="ic" aria-hidden="true"><use href="#t-pin"/></svg>Google Maps</button><button type="button" class="tchip" style="--i:12" data-tip="AllNetworks, CKHL, IRP (automated emails and templates)"><svg class="ic" aria-hidden="true"><use href="#t-mail"/></svg>Email notifications</button></div></div>
+        <div class="tk" style="--ck:var(--accent-ink)"><h3><i></i>Odoo apps</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Alazzaz (CRM to quotation), IBT (CRM enhancements)"><svg class="ic" aria-hidden="true"><use href="#t-funnel"/></svg>CRM</button><button type="button" class="tchip" style="--i:1" data-tip="ABIL, Flamengo, IRP, SIFH, Alazzaz"><svg class="ic" aria-hidden="true"><use href="#t-trend"/></svg>Sales</button><button type="button" class="tchip" style="--i:2" data-tip="ABIL: routes, van sales, loyalty and field reports"><svg class="ic" aria-hidden="true"><use href="#t-phone"/></svg>Mobile Sales</button><button type="button" class="tchip" style="--i:3" data-tip="IRP, Kafala, CGA, CKHL, AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-cart"/></svg>Purchase</button><button type="button" class="tchip" style="--i:4" data-tip="ABIL, Flamengo, CGA, AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-box"/></svg>Inventory</button><button type="button" class="tchip" style="--i:5" data-tip="ABIL (work centers, quality, scrap), GroupNova"><svg class="ic" aria-hidden="true"><use href="#t-tool"/></svg>Manufacturing</button><button type="button" class="tchip" style="--i:6" data-tip="Thompson Electronics, Ibokinkay, KayClaudi, ZJC POS, Flowers by EA"><svg class="ic" aria-hidden="true"><use href="#t-card"/></svg>Point of Sale</button><button type="button" class="tchip" style="--i:7" data-tip="CKHL, CLC, SIFH, IRP, Trace Trading"><svg class="ic" aria-hidden="true"><use href="#t-percent"/></svg>Accounting &amp; VAT</button><button type="button" class="tchip" style="--i:8" data-tip="HHRD, Bolt, Malatan, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-users"/></svg>HR &amp; Payroll</button><button type="button" class="tchip" style="--i:9" data-tip="CKHL, HHRD"><svg class="ic" aria-hidden="true"><use href="#t-clip"/></svg>Project</button><button type="button" class="tchip" style="--i:10" data-tip="AMARANTH, SSOL"><svg class="ic" aria-hidden="true"><use href="#t-buoy"/></svg>Helpdesk &amp; Maintenance</button><button type="button" class="tchip" style="--i:11" data-tip="GroupNova (fleet and fuel), CKHL (freight and manifests)"><svg class="ic" aria-hidden="true"><use href="#t-truck"/></svg>Fleet &amp; Logistics</button><button type="button" class="tchip" style="--i:12" data-tip="HHRD (digital signatures), CKHL"><svg class="ic" aria-hidden="true"><use href="#t-file"/></svg>Documents &amp; Sign</button><button type="button" class="tchip" style="--i:13" data-tip="SSOL (applicants and website applications)"><svg class="ic" aria-hidden="true"><use href="#t-userplus"/></svg>Recruitment</button><button type="button" class="tchip" style="--i:14" data-tip="CKHL, AMARANTH, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-globe"/></svg>Website &amp; Portals</button></div></div>
+        <div class="tk" style="--ck:var(--accent2-ink)"><h3><i></i>Technical</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Every project, from Odoo 13 to 20"><svg class="ic" aria-hidden="true"><use href="#t-layers"/></svg>Python &amp; Odoo ORM</button><button type="button" class="tchip" style="--i:1" data-tip="ABIL mobile sales and POS screens, custom widgets"><svg class="ic" aria-hidden="true"><use href="#t-code"/></svg>OWL &amp; JavaScript</button><button type="button" class="tchip" style="--i:2" data-tip="Invoices, statements, labels, cheques and views"><svg class="ic" aria-hidden="true"><use href="#t-printer"/></svg>QWeb &amp; XML</button><button type="button" class="tchip" style="--i:3" data-tip="Reports, data fixes and database upgrades"><svg class="ic" aria-hidden="true"><use href="#t-db"/></svg>PostgreSQL</button><button type="button" class="tchip" style="--i:4" data-tip="IRP, ABIL, CKHL, Flamengo, FESCO"><svg class="ic" aria-hidden="true"><use href="#t-grid"/></svg>Excel reports</button><button type="button" class="tchip" style="--i:5" data-tip="SIFH monthly statements and emailed reports"><svg class="ic" aria-hidden="true"><use href="#t-clock"/></svg>Cron jobs</button><button type="button" class="tchip" style="--i:6" data-tip="Journal, company and warehouse restrictions at ABIL, CKHL, IRP, SIFH and AMARANTH"><svg class="ic" aria-hidden="true"><use href="#t-shield"/></svg>Access &amp; security</button><button type="button" class="tchip" style="--i:7" data-tip="HHRD (13 to 17), AMARANTH (to 19), Clydesdale Club (to 20)"><svg class="ic" aria-hidden="true"><use href="#t-sync"/></svg>Upgrades</button><button type="button" class="tchip" style="--i:8" data-tip="IRP (Excel import to sales and purchase), client data loads"><svg class="ic" aria-hidden="true"><use href="#t-import"/></svg>Data import</button><button type="button" class="tchip" style="--i:9" data-tip="Payment, e-invoicing and AI services across client projects"><svg class="ic" aria-hidden="true"><use href="#t-link"/></svg>APIs</button><button type="button" class="tchip" style="--i:10" data-tip="Scheduled database backups on client servers"><svg class="ic" aria-hidden="true"><use href="#t-archive"/></svg>Backups</button><button type="button" class="tchip" style="--i:11" data-tip="Version control for client modules"><svg class="ic" aria-hidden="true"><use href="#t-branch"/></svg>Git &amp; GitHub</button><button type="button" class="tchip" style="--i:12" data-tip="Odoo installs, environments and database upgrades"><svg class="ic" aria-hidden="true"><use href="#t-server"/></svg>Linux servers</button></div></div>
+        <div class="tk" style="--ck:var(--gold)"><h3><i></i>Connected systems</h3><div class="tchips"><button type="button" class="tchip" style="--i:0" data-tip="Trace Trading (Saudi Arabia)"><svg class="ic" aria-hidden="true"><use href="#t-qr"/></svg>ZATCA e-invoicing</button><button type="button" class="tchip" style="--i:1" data-tip="Visio Retail (Pakistan POS)"><svg class="ic" aria-hidden="true"><use href="#t-file"/></svg>FBR e-invoicing</button><button type="button" class="tchip" style="--i:2" data-tip="Visio Retail"><svg class="ic" aria-hidden="true"><use href="#t-bag"/></svg>Shopify</button><button type="button" class="tchip" style="--i:3" data-tip="Trace Trading"><svg class="ic" aria-hidden="true"><use href="#t-box"/></svg>Zid store</button><button type="button" class="tchip" style="--i:4" data-tip="Thompson Electronics"><svg class="ic" aria-hidden="true"><use href="#t-chat"/></svg>WhatsApp</button><button type="button" class="tchip" style="--i:5" data-tip="AllNetworks (Stripe fees), CKHL and FESCO (payment integration)"><svg class="ic" aria-hidden="true"><use href="#t-card"/></svg>Stripe &amp; payments</button><button type="button" class="tchip" style="--i:6" data-tip="Bolt, Ibokinkay (ZKTeco devices)"><svg class="ic" aria-hidden="true"><use href="#t-chip"/></svg>Biometric attendance</button><button type="button" class="tchip" style="--i:7" data-tip="Exonet AI, FESCO chatbot"><svg class="ic" aria-hidden="true"><use href="#t-zap"/></svg>ChatGPT &amp; AI</button><button type="button" class="tchip" style="--i:8" data-tip="ABIL (automatic label and report printing)"><svg class="ic" aria-hidden="true"><use href="#t-printer"/></svg>Direct printing</button><button type="button" class="tchip" style="--i:9" data-tip="CKHL (shipping manifests)"><svg class="ic" aria-hidden="true"><use href="#t-sync"/></svg>EDI imports</button><button type="button" class="tchip" style="--i:10" data-tip="ABIL (multi-UoM barcode), KayClaudi and SIFH (product labels)"><svg class="ic" aria-hidden="true"><use href="#t-barcode"/></svg>Barcode &amp; labels</button><button type="button" class="tchip" style="--i:11" data-tip="AllNetworks (customer location maps)"><svg class="ic" aria-hidden="true"><use href="#t-pin"/></svg>Google Maps</button><button type="button" class="tchip" style="--i:12" data-tip="AllNetworks, CKHL, IRP (automated emails and templates)"><svg class="ic" aria-hidden="true"><use href="#t-mail"/></svg>Email notifications</button></div></div>
       </div>
     </div>
   </section>
@@ -992,6 +1018,21 @@ document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
   });
   document.addEventListener('click',function(e){if(!e.target.closest('.tchip'))hide()});
   addEventListener('scroll',hide,{passive:true});
+})();
+(function(){
+  // Floating hero cards: shown briefly after load, then only while hovering (or tapping) the photo.
+  var v=document.querySelector('.hero-visual'),photo=document.querySelector('.photo-wrap');
+  if(!v||!photo)return;
+  var parts=[photo].concat([].slice.call(v.querySelectorAll('.fcard,.sphere')));
+  var timer,touch=matchMedia('(hover: none)').matches;
+  setTimeout(function(){v.classList.add('cards-hidden')},4500);
+  function on(){clearTimeout(timer);if(v.classList.contains('cards-hidden'))v.classList.add('peek')}
+  function off(delay){clearTimeout(timer);timer=setTimeout(function(){v.classList.remove('peek')},delay)}
+  parts.forEach(function(e){
+    e.addEventListener('mouseenter',on);
+    e.addEventListener('mouseleave',function(){off(350)});
+  });
+  photo.addEventListener('click',function(){ if(touch){on();off(4000)} });   // tap on phones
 })();
 document.getElementById('y').textContent = new Date().getFullYear();
 document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.links').classList.remove('open')));
